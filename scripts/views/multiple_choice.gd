@@ -93,13 +93,16 @@ func _deal_cards():
 func _on_button_confirm_pressed() -> void:
 	var c1 = display_hand.get_all_cards()
 	var c2 = choice_hand.get_selected_cards()
+	var right_or_wrong =  PopupManager.popup(self, Const.Views.right_or_wrong, false)
 	if c1.size() > 0 and c2.size() > 0:
 		if c1[0].id == c2[0].id:
 			_record("right", [c1[0].id])
 			_right_ids.append(c1[0].id)
+			right_or_wrong.show_which(true)
 		else:
 			_record("wrong", [c1[0].id])
 			_wrong_ids.append(c1[0].id)
+			right_or_wrong.show_which(false)
 		_record_exam_time([c1[0].id])
 		await display_hand.discard_cards(c1)
 		await choice_hand.discard_cards(choice_hand.get_all_cards())

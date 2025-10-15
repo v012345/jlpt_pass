@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cgd2srekp3k28"]
+[gd_scene load_steps=26 format=3 uid="uid://cgd2srekp3k28"]
 
 [ext_resource type="Script" uid="uid://chdcydfyn3b5p" path="res://scripts/app.gd" id="1_j6dmo"]
 [ext_resource type="PackedScene" uid="uid://cs73istx0aojn" path="res://templates/scenes.tscn" id="2_i4801"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dqofnamwlvhws" path="res://views/exam_result.tscn" id="12_rgcu8"]
 [ext_resource type="PackedScene" uid="uid://bx66m7qm4tpnb" path="res://views/two_buttons.tscn" id="13_1v2j6"]
 [ext_resource type="PackedScene" uid="uid://i4nypbnpgyun" path="res://components/ui/book_list_item.tscn" id="14_a37lv"]
+[ext_resource type="PackedScene" uid="uid://cm3nxkmxs2gut" path="res://views/right_or_wrong.tscn" id="14_nc07x"]
 [ext_resource type="PackedScene" uid="uid://23aa7na8w686" path="res://templates/models.tscn" id="20_iho0w"]
 [ext_resource type="PackedScene" uid="uid://35pdhif3d1n7" path="res://models/japanese_model.tscn" id="21_dv8dk"]
 [ext_resource type="PackedScene" uid="uid://xxnadnirp75j" path="res://templates/entities.tscn" id="22_kd73m"]
@@ -41,6 +42,7 @@ bag = ExtResource("6_ovwn0")
 select_book = ExtResource("7_7iiwk")
 exam_result = ExtResource("12_rgcu8")
 two_buttons = ExtResource("13_1v2j6")
+right_or_wrong = ExtResource("14_nc07x")
 
 [node name="Components" parent="." instance=ExtResource("4_d7sxu")]
 match_hand = ExtResource("6_acaik")

@@ -9,3 +9,4 @@ class_name AllViews
 @export var select_book:PackedScene
 @export var exam_result:PackedScene
 @export var two_buttons:PackedScene
+@export var right_or_wrong:PackedScene
