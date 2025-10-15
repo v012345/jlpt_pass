@@ -16,7 +16,7 @@
 [node name="MultipleChoice" node_paths=PackedStringArray("dealer", "discard_pile", "deck", "display_hand", "choice_hand") instance=ExtResource("1_xatdp")]
 script = ExtResource("2_gdbgk")
 show_log = false
-question_total = 20
+question_total = 4
 choices_per_question = 6
 dealer = NodePath("UILayer/Dealer")
 discard_pile = NodePath("UILayer/DiscardPile")

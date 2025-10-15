@@ -14,11 +14,14 @@ extends ViewBase
 var _card_ids
 var _card_info: Control ## 如果非常快, 会出现生成 2 次, 然后释放 2 次的问题, 第二次释放会 bug
 var _exam_word_id = []
-
-func init(card_ids: Array) -> void:
+var _card_num_of_a_deck: int
+func init(card_ids: Array, learn_all_cards := false) -> void:
 	_exam_word_id.clear()
 	self._card_ids = card_ids
-	var draw_card_ids: Array = self._card_ids.slice(0, card_num_of_a_deck) # 取前50个
+	if learn_all_cards: _card_num_of_a_deck = card_ids.size()
+	else: _card_num_of_a_deck = card_num_of_a_deck
+
+	var draw_card_ids: Array = self._card_ids.slice(0, _card_num_of_a_deck) # 取前50个
 	deck.init(draw_card_ids, card_template, "kana")
 	hand.init(discard_pile, max_cards_in_hand)
 	GlobalFunction.block_input(true)
@@ -29,7 +32,7 @@ func _restart() -> void:
 	_exam_word_id.clear()
 	await hand.discard_cards(hand.get_all_cards())
 	self._card_ids.shuffle()
-	var draw_card_ids: Array = self._card_ids.slice(0, card_num_of_a_deck) # 取前50个
+	var draw_card_ids: Array = self._card_ids.slice(0, _card_num_of_a_deck) # 取前50个
 	deck.init(draw_card_ids, card_template, "kana")
 	GlobalFunction.block_input(true)
 	await _deal_cards()

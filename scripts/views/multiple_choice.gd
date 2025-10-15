@@ -73,7 +73,7 @@ func _deal_cards():
 			if _wrong_ids.size() > 0:
 				exam_result.comfirm_btn.pressed.connect(func():
 					self.queue_free()
-					SceneManager.open_view(Const.Views.learn_words).init(_wrong_ids)
+					SceneManager.open_view(Const.Views.learn_words).init(_wrong_ids, true)
 				)
 			else:
 				exam_result.comfirm_btn.text = "你太厉害了!"
