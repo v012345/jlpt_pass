@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://i24wg3xc1a3y"]
+
+[ext_resource type="Script" uid="uid://dqngvnvoq8igq" path="res://scripts/scenes/base/scene_base.gd" id="1_ra2ct"]
+[ext_resource type="PackedScene" uid="uid://b23mkx00iwtmy" path="res://scenes/base/scene_initializer.tscn" id="2_hogl6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qiu8x"]
+
+[node name="SceneBase" type="Node"]
+script = ExtResource("1_ra2ct")
+
+[node name="SceneInitializer" parent="." instance=ExtResource("2_hogl6")]
+
+[node name="FileName" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -56.0
+offset_right = 214.0
+offset_bottom = -28.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_qiu8x")
+text = "未调用父类 _ready 方法"

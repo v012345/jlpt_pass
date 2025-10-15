@@ -1,0 +1,87 @@
+[gd_scene load_steps=11 format=3 uid="uid://d3s7xi0g2u3ax"]
+
+[ext_resource type="PackedScene" uid="uid://bxhah2ktkb17w" path="res://entities/cards/base/card.tscn" id="1_6f8kn"]
+[ext_resource type="Script" uid="uid://csp3gau2lu50j" path="res://scripts/entities/cards/word_card.gd" id="1_8lyml"]
+[ext_resource type="Shader" uid="uid://cr1bjwa67fgr6" path="res://shaders/card_effect.gdshader" id="2_7lwsp"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_71r68"]
+resource_local_to_scene = true
+seed = -15
+frequency = 0.0021
+fractal_octaves = 4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8lyml"]
+noise = SubResource("FastNoiseLite_71r68")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rnfjy"]
+resource_local_to_scene = true
+shader = ExtResource("2_7lwsp")
+shader_parameter/fov = 90.0
+shader_parameter/y_rot = 0.0
+shader_parameter/x_rot = 0.0
+shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_8lyml")
+shader_parameter/dissolve_value = 1.0
+shader_parameter/burn_size = 0.03
+shader_parameter/burn_color = Color(1, 0.92549, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_77m7i"]
+resource_local_to_scene = true
+shader = ExtResource("2_7lwsp")
+shader_parameter/fov = 90.0
+shader_parameter/y_rot = 0.0
+shader_parameter/x_rot = 0.0
+shader_parameter/dissolve_value = 0.0
+shader_parameter/burn_size = 0.0
+shader_parameter/burn_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_71r68"]
+resource_local_to_scene = true
+shader = ExtResource("2_7lwsp")
+shader_parameter/fov = 90.0
+shader_parameter/y_rot = 0.0
+shader_parameter/x_rot = 0.0
+shader_parameter/dissolve_value = 0.0
+shader_parameter/burn_size = 0.0
+shader_parameter/burn_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8lyml"]
+resource_local_to_scene = true
+shader = ExtResource("2_7lwsp")
+shader_parameter/fov = 90.0
+shader_parameter/y_rot = 0.0
+shader_parameter/x_rot = 0.0
+shader_parameter/dissolve_value = 0.0
+shader_parameter/burn_size = 0.0
+shader_parameter/burn_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7lwsp"]
+resource_local_to_scene = true
+shader = ExtResource("2_7lwsp")
+shader_parameter/fov = 90.0
+shader_parameter/y_rot = 0.0
+shader_parameter/x_rot = 0.0
+shader_parameter/dissolve_value = 0.0
+shader_parameter/burn_size = 0.0
+shader_parameter/burn_color = Color(0, 0, 0, 1)
+
+[node name="WordCard" instance=ExtResource("1_6f8kn")]
+material = SubResource("ShaderMaterial_rnfjy")
+script = ExtResource("1_8lyml")
+
+[node name="Shadow" parent="." index="1"]
+material = SubResource("ShaderMaterial_77m7i")
+
+[node name="Back" parent="." index="2"]
+material = SubResource("ShaderMaterial_71r68")
+
+[node name="Front" parent="." index="3"]
+material = SubResource("ShaderMaterial_8lyml")
+
+[node name="SubViewportContainer" parent="Front" index="1"]
+material = SubResource("ShaderMaterial_7lwsp")
+
+[node name="DoubleClickTimer" parent="." index="6"]
+wait_time = 0.05
+
+[node name="FlapTimer" type="Timer" parent="." index="7"]
+one_shot = true

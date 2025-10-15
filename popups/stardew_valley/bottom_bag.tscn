@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://dli007e5fpkn8"]
+
+[ext_resource type="Texture2D" uid="uid://6fkxnmjn46j2" path="res://assets/atlas/MobileAtlas_manually_made.png" id="1_ykbsu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4a2nw"]
+atlas = ExtResource("1_ykbsu")
+region = Rect2(107, 80, 15, 15)
+
+[node name="BottomBag" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(165, 20)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -330.0
+offset_top = -80.0
+offset_right = 330.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(82, 20)
+mouse_filter = 0
+mouse_force_pass_scroll_events = false
+texture = SubResource("AtlasTexture_4a2nw")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 3

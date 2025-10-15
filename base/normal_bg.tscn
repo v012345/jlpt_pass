@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://csrvt4fi7oj3l"]
+
+[ext_resource type="Script" uid="uid://f6p6qd0jaos" path="res://scripts/base/normal_bg.gd" id="1_3o02h"]
+[ext_resource type="Shader" uid="uid://div0fhihkniao" path="res://shaders/background.gdshader" id="1_lxufm"]
+[ext_resource type="Shader" uid="uid://bql002avcrx6c" path="res://shaders/vhs.gdshader" id="2_5qej4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7lo6a"]
+resource_local_to_scene = true
+shader = ExtResource("1_lxufm")
+shader_parameter/polar_coordinates = false
+shader_parameter/polar_center = Vector2(0.5, 0.5)
+shader_parameter/polar_zoom = 1.0
+shader_parameter/polar_repeat = 3.0
+shader_parameter/spin_rotation = 2.0
+shader_parameter/spin_speed = 7.0
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/colour_1 = Color(0.870588, 0.266667, 0.231373, 1)
+shader_parameter/colour_2 = Color(0, 0.419608, 0.705882, 1)
+shader_parameter/colour_3 = Color(0.0862745, 0.137255, 0.145098, 1)
+shader_parameter/contrast = 3.5
+shader_parameter/lighting = 0.2
+shader_parameter/spin_amount = 0.2
+shader_parameter/pixel_filter = 740.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wvjx7"]
+resource_local_to_scene = true
+shader = ExtResource("2_5qej4")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.15
+shader_parameter/scanlines_width = 0.3
+shader_parameter/grille_opacity = 0.01
+shader_parameter/resolution = Vector2(1536, 864)
+shader_parameter/pixelate = true
+shader_parameter/roll = false
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 0.0
+shader_parameter/roll_variation = 0.1
+shader_parameter/distort_intensity = 0.073
+shader_parameter/noise_opacity = 0.0
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.0
+shader_parameter/aberration = 4.75e-08
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.0
+shader_parameter/vignette_opacity = 0.5
+
+[node name="BG" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3o02h")
+
+[node name="Swirl" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_7lo6a")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Vhs" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_wvjx7")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

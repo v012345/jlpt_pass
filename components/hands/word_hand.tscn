@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3bsoy5q640wy"]
+
+[ext_resource type="PackedScene" uid="uid://5xhhmdxu42hu" path="res://components/hands/base/base_hand.tscn" id="1_sm8gg"]
+[ext_resource type="Script" uid="uid://cl7gjaygyfino" path="res://scripts/components/word_hand.gd" id="2_xtoh3"]
+
+[node name="WordHand" instance=ExtResource("1_sm8gg")]
+script = ExtResource("2_xtoh3")

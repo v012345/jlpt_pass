@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://t0460url0yta"]
+
+[ext_resource type="Script" uid="uid://bw47opy7y4flw" path="res://scripts/components/script_dealer.gd" id="1_wgax2"]
+
+[node name="Dealer" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_wgax2")

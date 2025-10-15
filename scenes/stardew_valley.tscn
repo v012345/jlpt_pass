@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://2gd8rhhkb52v"]
+
+[ext_resource type="PackedScene" uid="uid://i24wg3xc1a3y" path="res://scenes/base/scene_base.tscn" id="1_itp64"]
+[ext_resource type="Script" uid="uid://deji0qwma38c3" path="res://scripts/scenes/stardew_valley.gd" id="2_5g7qd"]
+[ext_resource type="PackedScene" uid="uid://di5mgx5647mqm" path="res://components/maps/farm.tscn" id="2_qcj7q"]
+[ext_resource type="Texture2D" uid="uid://6fkxnmjn46j2" path="res://assets/atlas/MobileAtlas_manually_made.png" id="3_qcj7q"]
+
+[node name="StardewValley" instance=ExtResource("1_itp64")]
+script = ExtResource("2_5g7qd")
+
+[node name="MobileAtlasManuallyMade" type="Sprite2D" parent="." index="1"]
+position = Vector2(135, 260)
+texture = ExtResource("3_qcj7q")
+
+[node name="farm" parent="." index="2" instance=ExtResource("2_qcj7q")]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b23mkx00iwtmy"]
+
+[ext_resource type="Script" uid="uid://df3bwqyarlit3" path="res://scripts/scenes/base/scene_initializer.gd" id="1_grva1"]
+[ext_resource type="PackedScene" uid="uid://bvkktqfd43gsp" path="res://views/base/view_base.tscn" id="2_0yxtd"]
+
+[node name="SceneInitializer" type="Node"]
+script = ExtResource("1_grva1")
+root_view = ExtResource("2_0yxtd")

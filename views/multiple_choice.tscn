@@ -1,0 +1,116 @@
+[gd_scene load_steps=13 format=3 uid="uid://4xsah4oy6fd3"]
+
+[ext_resource type="PackedScene" uid="uid://bvkktqfd43gsp" path="res://views/base/view_base.tscn" id="1_xatdp"]
+[ext_resource type="Script" uid="uid://crt60m8qqkr1i" path="res://scripts/views/multiple_choice.gd" id="2_gdbgk"]
+[ext_resource type="PackedScene" uid="uid://csrvt4fi7oj3l" path="res://base/normal_bg.tscn" id="3_8ltj8"]
+[ext_resource type="PackedScene" uid="uid://dlv7o84r5m7ja" path="res://components/hands/display_hand.tscn" id="4_5yxhk"]
+[ext_resource type="PackedScene" uid="uid://t0460url0yta" path="res://components/dealer.tscn" id="4_omw7x"]
+[ext_resource type="PackedScene" uid="uid://y1k6miiajpdv" path="res://components/hands/match_hand.tscn" id="5_g6ytg"]
+[ext_resource type="PackedScene" uid="uid://i7fdnr4al7nh" path="res://base/base_deck.tscn" id="7_g6ytg"]
+[ext_resource type="PackedScene" uid="uid://y1tfge7t7i8a" path="res://base/discard_pile.tscn" id="7_m66bx"]
+[ext_resource type="Theme" uid="uid://b633f7byrj50x" path="res://themes/button.tres" id="9_m66bx"]
+[ext_resource type="StyleBox" uid="uid://dat8kgscwybo3" path="res://themes/colors/green_hover.tres" id="10_acks3"]
+[ext_resource type="StyleBox" uid="uid://d2h7by25n3too" path="res://themes/colors/green_pressed.tres" id="11_176nu"]
+[ext_resource type="StyleBox" uid="uid://dhjcvxgv25mpi" path="res://themes/colors/green_normal.tres" id="12_nqswr"]
+
+[node name="MultipleChoice" node_paths=PackedStringArray("dealer", "discard_pile", "deck", "display_hand", "choice_hand") instance=ExtResource("1_xatdp")]
+script = ExtResource("2_gdbgk")
+show_log = false
+question_total = 20
+choices_per_question = 6
+dealer = NodePath("UILayer/Dealer")
+discard_pile = NodePath("UILayer/DiscardPile")
+deck = NodePath("UILayer/Deck")
+display_hand = NodePath("UILayer/DisplayHand")
+choice_hand = NodePath("UILayer/ChoiceHand")
+
+[node name="BG" parent="UILayer" index="0" instance=ExtResource("3_8ltj8")]
+layout_mode = 1
+show_vhs = true
+colour_1 = Color(0.216, 0.49, 0.357, 1)
+colour_2 = Color(0.227, 0.416, 0.357, 1)
+colour_3 = Color(0, 0, 0, 0)
+spin_rotation = 1.0
+spin_speed = 6.0
+contrast = 1.5
+lighting = 0.0
+spin_amount = 0.1
+pixel_filter = 800.0
+metadata/_edit_lock_ = true
+
+[node name="DisplayHand" parent="UILayer" index="1" instance=ExtResource("4_5yxhk")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -340.0
+offset_bottom = -340.0
+grow_horizontal = 2
+grow_vertical = 2
+_crad_space_width = 160
+crad_space_height = 210
+metadata/_edit_lock_ = true
+
+[node name="ChoiceHand" parent="UILayer" index="2" instance=ExtResource("5_g6ytg")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+_crad_space_width = 200
+crad_space_height = 230
+metadata/_edit_lock_ = true
+
+[node name="Dealer" parent="UILayer" index="3" instance=ExtResource("4_omw7x")]
+metadata/_edit_lock_ = true
+
+[node name="Deck" parent="UILayer" index="4" instance=ExtResource("7_g6ytg")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_bottom = -200.0
+grow_horizontal = 0
+grow_vertical = 0
+metadata/_edit_lock_ = true
+
+[node name="DiscardPile" parent="UILayer" index="5" instance=ExtResource("7_m66bx")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="ButtonConfirm" type="Button" parent="UILayer" index="6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -250.0
+offset_right = 100.0
+offset_bottom = -160.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("9_m66bx")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = ExtResource("10_acks3")
+theme_override_styles/pressed = ExtResource("11_176nu")
+theme_override_styles/normal = ExtResource("12_nqswr")
+text = "确定"
+
+[connection signal="pressed" from="UILayer/ButtonConfirm" to="." method="_on_button_confirm_pressed"]

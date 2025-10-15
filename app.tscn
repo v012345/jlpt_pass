@@ -1,0 +1,84 @@
+[gd_scene load_steps=25 format=3 uid="uid://cgd2srekp3k28"]
+
+[ext_resource type="Script" uid="uid://chdcydfyn3b5p" path="res://scripts/app.gd" id="1_j6dmo"]
+[ext_resource type="PackedScene" uid="uid://cs73istx0aojn" path="res://templates/scenes.tscn" id="2_i4801"]
+[ext_resource type="PackedScene" uid="uid://dmqt27mr3fxy0" path="res://templates/views.tscn" id="3_d7sxu"]
+[ext_resource type="PackedScene" uid="uid://pdx8w16ibiy5" path="res://scenes/balatro.tscn" id="3_gtgpg"]
+[ext_resource type="PackedScene" uid="uid://y2kkuk07sfv7" path="res://templates/components.tscn" id="4_d7sxu"]
+[ext_resource type="PackedScene" uid="uid://4xsah4oy6fd3" path="res://views/multiple_choice.tscn" id="4_jndut"]
+[ext_resource type="PackedScene" uid="uid://dufpbwxwpyaue" path="res://views/translation_matching_exercise.tscn" id="4_nee2x"]
+[ext_resource type="PackedScene" uid="uid://cav04g45mipo4" path="res://views/learn_words.tscn" id="5_jq15t"]
+[ext_resource type="PackedScene" uid="uid://y1k6miiajpdv" path="res://components/hands/match_hand.tscn" id="6_acaik"]
+[ext_resource type="PackedScene" uid="uid://c3uhajp4uh5pg" path="res://views/role_bag.tscn" id="6_ovwn0"]
+[ext_resource type="PackedScene" uid="uid://b3brr5p1biwdx" path="res://views/select_book.tscn" id="7_7iiwk"]
+[ext_resource type="PackedScene" uid="uid://b3bsoy5q640wy" path="res://components/hands/word_hand.tscn" id="7_jndut"]
+[ext_resource type="PackedScene" uid="uid://d1udfk5t6roei" path="res://entities/cards/listening_card.tscn" id="8_ovwn0"]
+[ext_resource type="PackedScene" uid="uid://unllqlmfpmcy" path="res://views/word_info.tscn" id="8_rgcu8"]
+[ext_resource type="PackedScene" uid="uid://cpim5noicf5qg" path="res://entities/cards/match_card.tscn" id="9_7iiwk"]
+[ext_resource type="PackedScene" uid="uid://c4slapvfyyl0w" path="res://views/stage_clear.tscn" id="9_iho0w"]
+[ext_resource type="PackedScene" uid="uid://d3s7xi0g2u3ax" path="res://entities/cards/word_card.tscn" id="10_a37lv"]
+[ext_resource type="PackedScene" uid="uid://dqofnamwlvhws" path="res://views/exam_result.tscn" id="12_rgcu8"]
+[ext_resource type="PackedScene" uid="uid://bx66m7qm4tpnb" path="res://views/two_buttons.tscn" id="13_1v2j6"]
+[ext_resource type="PackedScene" uid="uid://i4nypbnpgyun" path="res://components/ui/book_list_item.tscn" id="14_a37lv"]
+[ext_resource type="PackedScene" uid="uid://23aa7na8w686" path="res://templates/models.tscn" id="20_iho0w"]
+[ext_resource type="PackedScene" uid="uid://35pdhif3d1n7" path="res://models/japanese_model.tscn" id="21_dv8dk"]
+[ext_resource type="PackedScene" uid="uid://xxnadnirp75j" path="res://templates/entities.tscn" id="22_kd73m"]
+[ext_resource type="PackedScene" uid="uid://cbxfdaa1xna6y" path="res://entities/player.tscn" id="23_j4pmb"]
+
+[node name="App" type="Node"]
+script = ExtResource("1_j6dmo")
+
+[node name="Scenes" parent="." instance=ExtResource("2_i4801")]
+balatro = ExtResource("3_gtgpg")
+
+[node name="Views" parent="." instance=ExtResource("3_d7sxu")]
+learn_words = ExtResource("5_jq15t")
+multiple_choice = ExtResource("4_jndut")
+match_game = ExtResource("4_nee2x")
+word_info = ExtResource("8_rgcu8")
+stage_clear = ExtResource("9_iho0w")
+bag = ExtResource("6_ovwn0")
+select_book = ExtResource("7_7iiwk")
+exam_result = ExtResource("12_rgcu8")
+two_buttons = ExtResource("13_1v2j6")
+
+[node name="Components" parent="." instance=ExtResource("4_d7sxu")]
+match_hand = ExtResource("6_acaik")
+word_hand = ExtResource("7_jndut")
+book_list_item = ExtResource("14_a37lv")
+
+[node name="Models" parent="." instance=ExtResource("20_iho0w")]
+japanese_model = ExtResource("21_dv8dk")
+
+[node name="Entities" parent="." instance=ExtResource("22_kd73m")]
+player = ExtResource("23_j4pmb")
+match_card = ExtResource("9_7iiwk")
+listening_card = ExtResource("8_ovwn0")
+word_card = ExtResource("10_a37lv")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Timer" type="Timer" parent="AudioStreamPlayer"]
+
+[node name="Scene" type="Node" parent="."]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="View" type="CanvasLayer" parent="."]
+
+[node name="Popup" type="CanvasLayer" parent="."]
+
+[node name="Notice" type="CanvasLayer" parent="."]
+
+[node name="Loading" type="CanvasLayer" parent="."]
+
+[node name="InputBlocking" type="Control" parent="Loading"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_force_pass_scroll_events = false

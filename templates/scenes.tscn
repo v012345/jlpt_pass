@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs73istx0aojn"]
+
+[ext_resource type="Script" uid="uid://cqwvkf774w456" path="res://scripts/templates/scenes.gd" id="1_on0wo"]
+[ext_resource type="PackedScene" uid="uid://2gd8rhhkb52v" path="res://scenes/stardew_valley.tscn" id="3_46f1e"]
+
+[node name="Scenes" type="Node"]
+script = ExtResource("1_on0wo")
+stardew_valley = ExtResource("3_46f1e")

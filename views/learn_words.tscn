@@ -1,0 +1,237 @@
+[gd_scene load_steps=15 format=3 uid="uid://cav04g45mipo4"]
+
+[ext_resource type="PackedScene" uid="uid://bvkktqfd43gsp" path="res://views/base/view_base.tscn" id="1_s2bmr"]
+[ext_resource type="Script" uid="uid://ilio4g1y2xn4" path="res://scripts/views/learn_words.gd" id="2_21q1w"]
+[ext_resource type="PackedScene" uid="uid://csrvt4fi7oj3l" path="res://base/normal_bg.tscn" id="3_0105w"]
+[ext_resource type="PackedScene" uid="uid://d3s7xi0g2u3ax" path="res://entities/cards/word_card.tscn" id="3_guppb"]
+[ext_resource type="PackedScene" uid="uid://y1tfge7t7i8a" path="res://base/discard_pile.tscn" id="4_guppb"]
+[ext_resource type="PackedScene" uid="uid://i7fdnr4al7nh" path="res://base/base_deck.tscn" id="5_gmhfi"]
+[ext_resource type="PackedScene" uid="uid://b3bsoy5q640wy" path="res://components/hands/word_hand.tscn" id="6_4jgbj"]
+[ext_resource type="PackedScene" uid="uid://t0460url0yta" path="res://components/dealer.tscn" id="7_bg20k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gepqi"]
+resource_local_to_scene = true
+bg_color = Color(1, 0, 0.14902, 0.25098)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0, 0.14902, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 12
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_diaau"]
+size = Vector2(172, 569)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jce0"]
+resource_local_to_scene = true
+bg_color = Color(0, 0.580392, 0.113725, 0.576471)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.458646, 0.17318, 0.647059)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ooeob"]
+size = Vector2(140, 190)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5x11"]
+resource_local_to_scene = true
+bg_color = Color(0.754, 0.04, 0.022, 0.507)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.886275, 0.243137, 0.384314, 0.545098)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_te0lx"]
+size = Vector2(140, 190)
+
+[node name="ViewBase" node_paths=PackedStringArray("dealer", "discard_pile", "deck", "hand", "forget_area", "remember_area") instance=ExtResource("1_s2bmr")]
+script = ExtResource("2_21q1w")
+show_log = false
+card_num_of_a_deck = 5
+max_cards_in_hand = 8
+card_template = ExtResource("3_guppb")
+dealer = NodePath("UILayer/Dealer")
+discard_pile = NodePath("UILayer/Dealer")
+deck = NodePath("UILayer/Deck")
+hand = NodePath("UILayer/Hand")
+forget_area = NodePath("UILayer/Forget/ExchangeOne")
+remember_area = NodePath("UILayer/Remember/HasKnown")
+
+[node name="BG" parent="UILayer" index="0" instance=ExtResource("3_0105w")]
+layout_mode = 1
+show_vhs = true
+colour_1 = Color(0.216, 0.49, 0.357, 1)
+colour_2 = Color(0.227, 0.416, 0.357, 1)
+colour_3 = Color(0, 0, 0, 0)
+spin_rotation = 1.0
+spin_speed = 6.0
+contrast = 1.5
+lighting = 0.0
+spin_amount = 0.1
+pixel_filter = 800.0
+metadata/_edit_lock_ = true
+
+[node name="DiscardPile" parent="UILayer" index="1" instance=ExtResource("4_guppb")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+
+[node name="Deck" parent="UILayer" index="2" instance=ExtResource("5_gmhfi")]
+offset_left = 1721.0
+offset_top = 847.0
+offset_right = 1721.0
+offset_bottom = 847.0
+
+[node name="untouchable" type="Control" parent="UILayer" index="3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShowAnswerBG" type="Panel" parent="UILayer" index="4"]
+layout_mode = 0
+offset_left = 1678.0
+offset_top = 43.0
+offset_right = 1908.0
+offset_bottom = 690.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gepqi")
+
+[node name="Label" type="Label" parent="UILayer/ShowAnswerBG" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -11.5
+offset_right = 0.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "显示信息"
+horizontal_alignment = 1
+
+[node name="ShowAnswer" type="Area2D" parent="UILayer/ShowAnswerBG" index="1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UILayer/ShowAnswerBG/ShowAnswer" index="0"]
+position = Vector2(117, 329)
+shape = SubResource("RectangleShape2D_diaau")
+
+[node name="Remember" type="Panel" parent="UILayer" index="5"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -254.0
+offset_top = -369.0
+offset_right = -114.0
+offset_bottom = -179.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0jce0")
+
+[node name="Label" type="Label" parent="UILayer/Remember" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -11.5
+offset_right = 0.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "学会了"
+horizontal_alignment = 1
+
+[node name="HasKnown" type="Area2D" parent="UILayer/Remember" index="1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UILayer/Remember/HasKnown" index="0"]
+position = Vector2(70, 96)
+shape = SubResource("RectangleShape2D_ooeob")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="Forget" type="Panel" parent="UILayer" index="6"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 72.0
+offset_top = -361.0
+offset_right = 212.0
+offset_bottom = -171.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_u5x11")
+
+[node name="Label" type="Label" parent="UILayer/Forget" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -11.5
+offset_right = 0.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "换一张"
+horizontal_alignment = 1
+
+[node name="ExchangeOne" type="Area2D" parent="UILayer/Forget" index="1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UILayer/Forget/ExchangeOne" index="0"]
+position = Vector2(68, 95)
+shape = SubResource("RectangleShape2D_te0lx")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="Hand" parent="UILayer" index="7" instance=ExtResource("6_4jgbj")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -340.0
+offset_bottom = -340.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dealer" parent="UILayer" index="8" instance=ExtResource("7_bg20k")]
+
+[connection signal="area_entered" from="UILayer/ShowAnswerBG/ShowAnswer" to="." method="_on_show_answer_area_entered"]
+[connection signal="area_exited" from="UILayer/ShowAnswerBG/ShowAnswer" to="." method="_on_show_answer_area_exited"]
+[connection signal="area_entered" from="UILayer/Remember/HasKnown" to="." method="_on_has_known_area_entered"]
+[connection signal="area_exited" from="UILayer/Remember/HasKnown" to="." method="_on_has_known_area_exited"]
+[connection signal="area_entered" from="UILayer/Forget/ExchangeOne" to="." method="_on_exchange_one_area_entered"]
+[connection signal="area_exited" from="UILayer/Forget/ExchangeOne" to="." method="_on_exchange_one_area_exited"]

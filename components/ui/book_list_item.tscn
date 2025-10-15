@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://i4nypbnpgyun"]
+
+[ext_resource type="PackedScene" uid="uid://b1n1grxcxa3kg" path="res://components/ui/base/scroll_list_item_base.tscn" id="1_ybkb8"]
+[ext_resource type="Script" uid="uid://c4mbylvti5gf7" path="res://scripts/components/ui/book_list_item.gd" id="2_uigas"]
+[ext_resource type="Texture2D" uid="uid://b7epp2v87fdau" path="res://assets/default/back.png" id="3_np23h"]
+
+[node name="BookListItem" node_paths=PackedStringArray("cover") instance=ExtResource("1_ybkb8")]
+custom_minimum_size = Vector2(213, 280)
+offset_right = 213.0
+offset_bottom = 280.0
+script = ExtResource("2_uigas")
+cover = NodePath("UILayer/Cover")
+
+[node name="Cover" type="TextureRect" parent="UILayer" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(86, 120)
+texture = ExtResource("3_np23h")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="mouse_entered" from="ButtonBeClicked" to="." method="_on_button_be_clicked_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonBeClicked" to="." method="_on_button_be_clicked_mouse_exited"]

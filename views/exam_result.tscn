@@ -1,0 +1,122 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqofnamwlvhws"]
+
+[ext_resource type="PackedScene" uid="uid://bvkktqfd43gsp" path="res://views/base/view_base.tscn" id="1_mj2oh"]
+[ext_resource type="StyleBox" uid="uid://daouumpvnupq" path="res://themes/popup_bg.tres" id="2_kl0ky"]
+[ext_resource type="Script" uid="uid://ioquvn3ahf0m" path="res://scripts/views/exam_result.gd" id="2_rw4e2"]
+[ext_resource type="Texture2D" uid="uid://b4lcna4q4hyha" path="res://assets/ui/cross.png" id="3_vntk3"]
+[ext_resource type="Texture2D" uid="uid://1gmkegh1q58u" path="res://assets/ui/checker.png" id="4_rw4e2"]
+[ext_resource type="StyleBox" uid="uid://dkxxfp75jmyd6" path="res://themes/font_bg.tres" id="4_vntk3"]
+[ext_resource type="Theme" uid="uid://b633f7byrj50x" path="res://themes/button.tres" id="5_j7t5h"]
+
+[node name="ExamResult" node_paths=PackedStringArray("wrong", "right", "comfirm_btn") instance=ExtResource("1_mj2oh")]
+script = ExtResource("2_rw4e2")
+wrong = NodePath("UILayer/Panel/TextureRect/Label")
+right = NodePath("UILayer/Panel/TextureRect2/Label3")
+comfirm_btn = NodePath("UILayer/Panel/ButtonLearnWrongChoice")
+
+[node name="Control" type="Control" parent="UILayer" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="UILayer" index="1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -384.5
+offset_top = -198.5
+offset_right = 384.5
+offset_bottom = 198.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_kl0ky")
+
+[node name="TextureRect" type="TextureRect" parent="UILayer/Panel" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 70.0
+offset_top = 50.0
+offset_right = 210.0
+offset_bottom = 190.0
+grow_horizontal = 2
+texture = ExtResource("3_vntk3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UILayer/Panel/TextureRect" index="0"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -52.5
+offset_top = 18.0
+offset_right = 52.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.211765, 0.286275, 0.305882, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("4_vntk3")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="UILayer/Panel" index="1"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -210.0
+offset_top = 50.0
+offset_right = -70.0
+offset_bottom = 190.0
+grow_horizontal = 2
+texture = ExtResource("4_rw4e2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label3" type="Label" parent="UILayer/Panel/TextureRect2" index="0"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -52.5
+offset_top = 18.0
+offset_right = 52.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.211765, 0.286275, 0.305882, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("4_vntk3")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonLearnWrongChoice" type="Button" parent="UILayer/Panel" index="2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -209.0
+offset_top = -89.0
+offset_right = 209.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("5_j7t5h")
+text = "学习做错的题目"

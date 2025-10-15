@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvkktqfd43gsp"]
+
+[ext_resource type="Script" uid="uid://ufomsey58g8w" path="res://scripts/base/view_base.gd" id="1_dqxvw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64nxv"]
+expand_margin_right = 40.0
+
+[node name="ViewBase" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_dqxvw")
+metadata/_edit_lock_ = true
+
+[node name="UILayer" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="FileName" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -28.0
+offset_right = 60.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_64nxv")
+text = "未调用父类 _ready 方法"
+metadata/_edit_lock_ = true
+
+[node name="SubView" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true

@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://bx66m7qm4tpnb"]
+
+[ext_resource type="PackedScene" uid="uid://bvkktqfd43gsp" path="res://views/base/view_base.tscn" id="1_6i40i"]
+[ext_resource type="Script" uid="uid://cteo8ekyksop6" path="res://scripts/views/two_buttons.gd" id="2_6i40i"]
+[ext_resource type="StyleBox" uid="uid://daouumpvnupq" path="res://themes/popup_bg.tres" id="3_8ksxo"]
+[ext_resource type="Theme" uid="uid://b633f7byrj50x" path="res://themes/button.tres" id="4_ajmjt"]
+[ext_resource type="StyleBox" uid="uid://dat8kgscwybo3" path="res://themes/colors/green_hover.tres" id="5_kijlf"]
+[ext_resource type="StyleBox" uid="uid://d2h7by25n3too" path="res://themes/colors/green_pressed.tres" id="6_ymihx"]
+[ext_resource type="StyleBox" uid="uid://dhjcvxgv25mpi" path="res://themes/colors/green_normal.tres" id="7_bjwsi"]
+
+[node name="ViewBase" node_paths=PackedStringArray("button_top", "button_bottom") instance=ExtResource("1_6i40i")]
+script = ExtResource("2_6i40i")
+button_top = NodePath("UILayer/Panel/ButtonContainer/ButtonTop")
+button_bottom = NodePath("UILayer/Panel/ButtonContainer/ButtonBottom")
+
+[node name="Control" type="Control" parent="UILayer" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="UILayer" index="1"]
+clip_children = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -277.5
+offset_top = -152.5
+offset_right = 277.5
+offset_bottom = 152.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("3_8ksxo")
+
+[node name="ButtonContainer" type="VBoxContainer" parent="UILayer/Panel" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -218.0
+offset_top = -75.0
+offset_right = 218.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 10
+theme_override_constants/separation = 20
+
+[node name="ButtonTop" type="Button" parent="UILayer/Panel/ButtonContainer" index="0"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+theme = ExtResource("4_ajmjt")
+theme_override_styles/hover = ExtResource("5_kijlf")
+theme_override_styles/pressed = ExtResource("6_ymihx")
+theme_override_styles/normal = ExtResource("7_bjwsi")
+text = "再学习一次"
+icon_alignment = 1
+
+[node name="ButtonBottom" type="Button" parent="UILayer/Panel/ButtonContainer" index="1"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+theme = ExtResource("4_ajmjt")
+text = "去考试"
+icon_alignment = 1

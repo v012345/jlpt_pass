@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlv7o84r5m7ja"]
+
+[ext_resource type="PackedScene" uid="uid://5xhhmdxu42hu" path="res://components/hands/base/base_hand.tscn" id="1_rubyk"]
+[ext_resource type="Script" uid="uid://x6xovina1lsf" path="res://scripts/components/hands/display_hand.gd" id="2_7b1qm"]
+
+[node name="DisplayHand" instance=ExtResource("1_rubyk")]
+script = ExtResource("2_7b1qm")

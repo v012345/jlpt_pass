@@ -1,0 +1,116 @@
+[gd_scene load_steps=12 format=3 uid="uid://c15mau462i4h7"]
+
+[ext_resource type="PackedScene" uid="uid://bvkktqfd43gsp" path="res://views/base/view_base.tscn" id="1_m2s7d"]
+[ext_resource type="Theme" uid="uid://b633f7byrj50x" path="res://themes/button.tres" id="2_echk3"]
+[ext_resource type="Script" uid="uid://c0shw6wolv10h" path="res://scripts/views/main_menu.gd" id="2_mvpi2"]
+[ext_resource type="StyleBox" uid="uid://yb3ok1gqjgl3" path="res://themes/colors/blue_hover.tres" id="3_eilfd"]
+[ext_resource type="StyleBox" uid="uid://enjy4pt88w3i" path="res://themes/colors/blue_pressed.tres" id="3_le8ob"]
+[ext_resource type="StyleBox" uid="uid://womt1o888d1j" path="res://themes/colors/blue_normal.tres" id="4_eilfd"]
+[ext_resource type="StyleBox" uid="uid://cgigh486y0yle" path="res://themes/colors/red_hover.tres" id="6_dwc5m"]
+[ext_resource type="StyleBox" uid="uid://dgjenwskhnfwi" path="res://themes/colors/red_pressed.tres" id="7_mvpi2"]
+[ext_resource type="StyleBox" uid="uid://dk2kxp4675yw2" path="res://themes/colors/red_normal.tres" id="8_g5uy4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gam8q"]
+bg_color = Color(0.2, 0.321569, 0.321569, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.843137)
+shadow_size = 1
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_le8ob"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[node name="MainMenu" instance=ExtResource("1_m2s7d")]
+script = ExtResource("2_mvpi2")
+
+[node name="Panel" type="Panel" parent="UILayer" index="0"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -533.5
+offset_top = -302.0
+offset_right = 533.5
+offset_bottom = -200.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gam8q")
+metadata/_edit_group_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/Panel" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="ButtonExam" type="Button" parent="UILayer/Panel/HBoxContainer" index="0"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = ExtResource("2_echk3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_le8ob")
+theme_override_styles/hover = ExtResource("3_eilfd")
+theme_override_styles/pressed = ExtResource("3_le8ob")
+theme_override_styles/normal = ExtResource("4_eilfd")
+text = "考试
+"
+
+[node name="ButtonLearn" type="Button" parent="UILayer/Panel/HBoxContainer" index="1"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = ExtResource("2_echk3")
+theme_override_styles/hover = ExtResource("3_eilfd")
+theme_override_styles/pressed = ExtResource("3_le8ob")
+theme_override_styles/normal = ExtResource("4_eilfd")
+text = "学习"
+
+[node name="ButtonMatchGame" type="Button" parent="UILayer/Panel/HBoxContainer" index="2"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = ExtResource("2_echk3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_le8ob")
+theme_override_styles/hover = ExtResource("3_eilfd")
+theme_override_styles/pressed = ExtResource("3_le8ob")
+theme_override_styles/normal = ExtResource("4_eilfd")
+text = "匹配"
+
+[node name="ButtonGotoStardewValley" type="Button" parent="UILayer/Panel/HBoxContainer" index="3"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = ExtResource("2_echk3")
+text = "种地"
+
+[node name="ButtonExit" type="Button" parent="UILayer/Panel/HBoxContainer" index="4"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = ExtResource("2_echk3")
+theme_override_styles/hover = ExtResource("6_dwc5m")
+theme_override_styles/pressed = ExtResource("7_mvpi2")
+theme_override_styles/normal = ExtResource("8_g5uy4")
+text = "退出"
+
+[connection signal="pressed" from="UILayer/Panel/HBoxContainer/ButtonExam" to="." method="_on_button_exam_pressed"]
+[connection signal="pressed" from="UILayer/Panel/HBoxContainer/ButtonLearn" to="." method="_on_button_learn_pressed"]
+[connection signal="pressed" from="UILayer/Panel/HBoxContainer/ButtonMatchGame" to="." method="_on_button_match_game_pressed"]
+[connection signal="pressed" from="UILayer/Panel/HBoxContainer/ButtonGotoStardewValley" to="." method="_on_button_goto_stardew_valley_pressed"]
+[connection signal="pressed" from="UILayer/Panel/HBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]

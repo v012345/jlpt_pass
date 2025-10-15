@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://35pdhif3d1n7"]
+
+[ext_resource type="Script" uid="uid://bnmhb5puuy7so" path="res://scripts/models/japanese_model.gd" id="1_coei6"]
+
+[node name="JapaneseModel" type="Node"]
+script = ExtResource("1_coei6")
+metadata/_custom_type_script = "uid://cdxs3uvg0jqqa"

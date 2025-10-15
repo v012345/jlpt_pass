@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://y1k6miiajpdv"]
+
+[ext_resource type="PackedScene" uid="uid://5xhhmdxu42hu" path="res://components/hands/base/base_hand.tscn" id="1_styl4"]
+[ext_resource type="Script" uid="uid://b2w2ly3hb35km" path="res://scripts/components/script_match_hand.gd" id="2_vmwrl"]
+
+[node name="MatchHand" instance=ExtResource("1_styl4")]
+script = ExtResource("2_vmwrl")
+crad_space_height = 400

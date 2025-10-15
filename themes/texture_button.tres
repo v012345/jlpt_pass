@@ -1,0 +1,29 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://c0by36lwnh75w"]
+
+[ext_resource type="Texture2D" uid="uid://de7felusa1t67" path="res://assets/ui/kindpng_6396004.png" id="1_bj34f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bj34f"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bj34f"]
+texture = ExtResource("1_bj34f")
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lpyuu"]
+resource_local_to_scene = true
+texture = ExtResource("1_bj34f")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kkvle"]
+resource_local_to_scene = true
+texture = ExtResource("1_bj34f")
+
+[resource]
+resource_local_to_scene = true
+Button/styles/focus = SubResource("StyleBoxEmpty_bj34f")
+Button/styles/hover = SubResource("StyleBoxTexture_bj34f")
+Button/styles/normal = SubResource("StyleBoxTexture_lpyuu")
+Button/styles/pressed = SubResource("StyleBoxTexture_kkvle")

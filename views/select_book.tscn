@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3brr5p1biwdx"]
+
+[ext_resource type="PackedScene" uid="uid://bvkktqfd43gsp" path="res://views/base/view_base.tscn" id="1_lrj8t"]
+[ext_resource type="Script" uid="uid://b5mtl1k66b2vo" path="res://scripts/views/select_book.gd" id="2_nn57j"]
+[ext_resource type="StyleBox" uid="uid://daouumpvnupq" path="res://themes/popup_bg.tres" id="3_mbvlh"]
+[ext_resource type="PackedScene" uid="uid://cekm0jgfdbbyj" path="res://components/ui/base/scroll_list_base.tscn" id="3_r05uo"]
+[ext_resource type="StyleBox" uid="uid://cqvc8e6epjp6u" path="res://themes/scroll_list_bg.tres" id="4_m1upk"]
+[ext_resource type="Theme" uid="uid://b633f7byrj50x" path="res://themes/button.tres" id="5_nba76"]
+
+[node name="SelectBook" node_paths=PackedStringArray("book_list") instance=ExtResource("1_lrj8t")]
+script = ExtResource("2_nn57j")
+book_list = NodePath("UILayer/Panel/Panel/ScrollListBase")
+
+[node name="Control" type="Control" parent="UILayer" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_force_pass_scroll_events = false
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="UILayer" index="1"]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 80.0
+offset_right = 1517.0
+offset_bottom = 888.0
+theme_override_styles/panel = ExtResource("3_mbvlh")
+
+[node name="Panel" type="Panel" parent="UILayer/Panel" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -141.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_m1upk")
+
+[node name="ScrollListBase" parent="UILayer/Panel/Panel" index="0" instance=ExtResource("3_r05uo")]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 1
+
+[node name="ButtonBack" type="Button" parent="UILayer/Panel" index="1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -80.0
+offset_right = -20.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("5_nba76")
+theme_override_font_sizes/font_size = 30
+text = "返回"
+
+[connection signal="pressed" from="UILayer/Panel/ButtonBack" to="." method="_on_button_back_pressed"]

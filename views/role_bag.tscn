@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3uhajp4uh5pg"]
+
+[ext_resource type="PackedScene" uid="uid://bvkktqfd43gsp" path="res://views/base/view_base.tscn" id="1_la4ff"]
+[ext_resource type="PackedScene" uid="uid://bcswxte8p7e2y" path="res://base/shadow_layer.tscn" id="2_8ty4i"]
+[ext_resource type="Script" uid="uid://b3l7s70dqv07n" path="res://scripts/views/role_bag.gd" id="2_tgqi6"]
+[ext_resource type="Texture2D" uid="uid://6fkxnmjn46j2" path="res://assets/atlas/MobileAtlas_manually_made.png" id="3_tgqi6"]
+[ext_resource type="Texture2D" uid="uid://l1kg7yoonwn" path="res://assets/icons/back.png" id="4_ukrv5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0cgd"]
+atlas = ExtResource("3_tgqi6")
+region = Rect2(107, 80, 15, 15)
+
+[node name="ViewBase" instance=ExtResource("1_la4ff")]
+script = ExtResource("2_tgqi6")
+
+[node name="ShadowLayer" parent="UILayer" index="0" instance=ExtResource("2_8ty4i")]
+layout_mode = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UILayer" index="1"]
+custom_minimum_size = Vector2(170, 51)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -102.0
+offset_right = 340.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(82, 20)
+texture = SubResource("AtlasTexture_x0cgd")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 3
+
+[node name="ButtonLeave" type="Button" parent="UILayer" index="2"]
+layout_mode = 0
+offset_left = 903.0
+offset_top = 584.0
+offset_right = 1072.0
+offset_bottom = 615.0
+text = "返回学习"
+icon = ExtResource("4_ukrv5")
+expand_icon = true
+
+[connection signal="pressed" from="UILayer/ButtonLeave" to="." method="_on_button_leave_pressed"]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://du1015l2mc743"]
+
+[ext_resource type="Script" uid="uid://fga3cufullxy" path="res://scripts/state_machine/states/vegetation.gd" id="1_f1u7w"]
+
+[node name="Vegetation" type="Node"]
+script = ExtResource("1_f1u7w")
+metadata/_custom_type_script = "uid://27sm1bwt2bik"

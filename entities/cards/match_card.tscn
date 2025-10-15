@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://cpim5noicf5qg"]
+
+[ext_resource type="Script" uid="uid://cx7na8lgrmn2f" path="res://scripts/entities/match_card.gd" id="1_cfoc0"]
+[ext_resource type="PackedScene" uid="uid://bxhah2ktkb17w" path="res://entities/cards/base/card.tscn" id="1_uq8un"]
+[ext_resource type="Shader" uid="uid://cr1bjwa67fgr6" path="res://shaders/card_effect.gdshader" id="2_11vfv"]
+
+[sub_resource type="Gradient" id="Gradient_d1ooa"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_u54tm"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_25egf"]
+color_ramp = SubResource("Gradient_d1ooa")
+noise = SubResource("FastNoiseLite_u54tm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cfoc0"]
+resource_local_to_scene = true
+shader = ExtResource("2_11vfv")
+shader_parameter/fov = 90.0
+shader_parameter/y_rot = 0.0
+shader_parameter/x_rot = 0.0
+shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_25egf")
+shader_parameter/dissolve_value = 1.0
+shader_parameter/burn_size = 0.0
+shader_parameter/burn_color = Color(0, 0, 0, 1)
+
+[node name="Card" instance=ExtResource("1_uq8un")]
+material = SubResource("ShaderMaterial_cfoc0")
+script = ExtResource("1_cfoc0")
+can_be_dragged = false
+
+[node name="TouchLayer" parent="." index="4"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -93.0
+offset_right = 69.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://on0fplvbvpuh"]
+
+[ext_resource type="Theme" uid="uid://b633f7byrj50x" path="res://themes/button.tres" id="1_wdor3"]
+[ext_resource type="Texture2D" uid="uid://ckwyvj2u01xnl" path="res://assets/icons/back-button.png" id="2_rbtgd"]
+
+[node name="ButtonBack" type="Button"]
+offset_left = 12.0
+offset_top = 6.0
+offset_right = 142.0
+offset_bottom = 51.0
+theme = ExtResource("1_wdor3")
+theme_override_font_sizes/font_size = 23
+text = "返回"
+icon = ExtResource("2_rbtgd")
+expand_icon = true
