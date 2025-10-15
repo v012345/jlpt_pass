@@ -205,7 +205,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 24
-text = "换一张"
+text = "下次再学吧"
 horizontal_alignment = 1
 
 [node name="ExchangeOne" type="Area2D" parent="UILayer/Forget" index="1"]
