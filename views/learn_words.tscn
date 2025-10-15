@@ -61,7 +61,7 @@ size = Vector2(140, 190)
 [node name="ViewBase" node_paths=PackedStringArray("dealer", "discard_pile", "deck", "hand", "forget_area", "remember_area") instance=ExtResource("1_s2bmr")]
 script = ExtResource("2_21q1w")
 show_log = false
-card_num_of_a_deck = 5
+card_num_of_a_deck = 20
 max_cards_in_hand = 8
 card_template = ExtResource("3_guppb")
 dealer = NodePath("UILayer/Dealer")
