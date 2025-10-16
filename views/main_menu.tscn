@@ -88,7 +88,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_le8ob")
 theme_override_styles/hover = ExtResource("3_eilfd")
 theme_override_styles/pressed = ExtResource("3_le8ob")
 theme_override_styles/normal = ExtResource("4_eilfd")
-text = "匹配"
+text = "巩固"
 
 [node name="ButtonGotoStardewValley" type="Button" parent="UILayer/Panel/HBoxContainer" index="3"]
 custom_minimum_size = Vector2(200, 80)

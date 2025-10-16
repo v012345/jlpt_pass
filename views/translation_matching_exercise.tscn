@@ -11,7 +11,7 @@
 [node name="ViewBase" node_paths=PackedStringArray("dealer", "discard_pile", "deckKana", "deck_chinese", "hand_top", "hand_bottom") instance=ExtResource("1_v4vke")]
 script = ExtResource("2_8wgnc")
 show_log = false
-card_num_of_a_deck = 12
+card_num_of_a_deck = 24
 max_cards_in_hand = 8
 dealer = NodePath("UILayer/Dealer")
 discard_pile = NodePath("UILayer/DiscardPile")
