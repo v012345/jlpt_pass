@@ -17,7 +17,7 @@
 script = ExtResource("2_gdbgk")
 show_log = false
 question_total = 20
-choices_per_question = 6
+choices_per_question = 8
 dealer = NodePath("UILayer/Dealer")
 discard_pile = NodePath("UILayer/DiscardPile")
 deck = NodePath("UILayer/Deck")
