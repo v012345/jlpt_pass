@@ -701,7 +701,7 @@ const DATA = {
 279:{"id" :279,"kana" :"てきぱき［と］（する）","kanji" :"てきぱき［と］（する）","chinese" :"利落、爽快","example_id" :[308],"sound_file" :"res://assets/sounds/Chapter3_Section1.mp3","sound_start" :75.66,"sound_end" :79.66,"book_id" :1,},
 280:{"id" :280,"kana" :"ま","kanji" :"間","chinese" :"间隙、时间","example_id" :[309],"sound_file" :"res://assets/sounds/Chapter3_Section1.mp3","sound_start" :85.25,"sound_end" :87.05,"book_id" :1,},
 281:{"id" :281,"kana" :"しゅうへん","kanji" :"周辺","chinese" :"周边","example_id" :[310],"sound_file" :"res://assets/sounds/Chapter3_Section1.mp3","sound_start" :91.38,"sound_end" :93.59,"book_id" :1,},
-282:{"id" :282,"kana" :"しゅうい","kanji" :"周囲","chinese" :"周囲","example_id" :[311],"sound_file" :"res://assets/sounds/Chapter3_Section1.mp3","sound_start" :69.06,"sound_end" :101.23,"book_id" :1,},
+282:{"id" :282,"kana" :"しゅうい","kanji" :"周囲","chinese" :"周囲","example_id" :[311],"sound_file" :"res://assets/sounds/Chapter3_Section1.mp3","sound_start" :99,"sound_end" :101.23,"book_id" :1,},
 283:{"id" :283,"kana" :"あと","kanji" :"あと","chinese" :"剩下的","example_id" :[312],"sound_file" :"res://assets/sounds/Chapter3_Section1.mp3","sound_start" :107.11,"sound_end" :109.08,"book_id" :1,},
 284:{"id" :284,"kana" :"すれちがう","kanji" :"すれ違う","chinese" :"擦过、交错","example_id" :[313],"sound_file" :"res://assets/sounds/Chapter3_Section1.mp3","sound_start" :114.07,"sound_end" :116.46,"book_id" :1,},
 285:{"id" :285,"kana" :"はう","kanji" :"はう","chinese" :"趴","example_id" :[314],"sound_file" :"res://assets/sounds/Chapter3_Section1.mp3","sound_start" :122.27,"sound_end" :124.03,"book_id" :1,},
