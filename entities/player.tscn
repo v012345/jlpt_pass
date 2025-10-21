@@ -1203,9 +1203,11 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0g4kb"]
+size = Vector2(20, 16.105)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("camera")]
 script = ExtResource("1_3h0qw")
+camera = NodePath("Camera2D")
 
 [node name="Body" type="Sprite2D" parent="."]
 texture = ExtResource("2_wfaac")
@@ -1240,8 +1242,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, 6.105)
+position = Vector2(0, 8.0525)
 shape = SubResource("RectangleShape2D_0g4kb")
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("6_mmbjh")]

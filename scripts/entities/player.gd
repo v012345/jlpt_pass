@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name PlayerEntity
 
+@export var camera:Camera2D
+
 var focus: bool = true:
 	set(b):
 		focus = b
@@ -11,6 +13,9 @@ var wrong_word_ids = []
 
 func set_state(state):
 	$StateMachine.change_to(state)
+
+func set_view_area():
+	pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

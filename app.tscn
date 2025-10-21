@@ -1,10 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://cgd2srekp3k28"]
+[gd_scene load_steps=27 format=3 uid="uid://cgd2srekp3k28"]
 
 [ext_resource type="Script" uid="uid://chdcydfyn3b5p" path="res://scripts/app.gd" id="1_j6dmo"]
 [ext_resource type="PackedScene" uid="uid://cs73istx0aojn" path="res://templates/scenes.tscn" id="2_i4801"]
 [ext_resource type="PackedScene" uid="uid://dmqt27mr3fxy0" path="res://templates/views.tscn" id="3_d7sxu"]
 [ext_resource type="PackedScene" uid="uid://pdx8w16ibiy5" path="res://scenes/balatro.tscn" id="3_gtgpg"]
 [ext_resource type="PackedScene" uid="uid://y2kkuk07sfv7" path="res://templates/components.tscn" id="4_d7sxu"]
+[ext_resource type="PackedScene" uid="uid://doqnlxshq86vk" path="res://scenes/kitchen.tscn" id="4_gdquv"]
 [ext_resource type="PackedScene" uid="uid://4xsah4oy6fd3" path="res://views/multiple_choice.tscn" id="4_jndut"]
 [ext_resource type="PackedScene" uid="uid://dufpbwxwpyaue" path="res://views/translation_matching_exercise.tscn" id="4_nee2x"]
 [ext_resource type="PackedScene" uid="uid://cav04g45mipo4" path="res://views/learn_words.tscn" id="5_jq15t"]
@@ -31,6 +32,7 @@ script = ExtResource("1_j6dmo")
 
 [node name="Scenes" parent="." instance=ExtResource("2_i4801")]
 balatro = ExtResource("3_gtgpg")
+kitchen = ExtResource("4_gdquv")
 
 [node name="Views" parent="." instance=ExtResource("3_d7sxu")]
 learn_words = ExtResource("5_jq15t")

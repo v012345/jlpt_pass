@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4hlrqlm51d65"]
+
+[ext_resource type="Texture2D" uid="uid://vcqqmq4jahbb" path="res://assets/atlas/deep_fryer.png" id="1_vbda2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0oqop"]
+size = Vector2(92.5, 147)
+
+[node name="DeepFryer" type="CharacterBody2D"]
+
+[node name="DeepFryer" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(0.639073, 0.639073)
+texture = ExtResource("1_vbda2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.75, -0.5)
+shape = SubResource("RectangleShape2D_0oqop")

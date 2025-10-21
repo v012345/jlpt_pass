@@ -36,9 +36,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -533.5
+offset_left = -653.0
 offset_top = -302.0
-offset_right = 533.5
+offset_right = 653.0
 offset_bottom = -200.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -98,7 +98,15 @@ size_flags_vertical = 4
 theme = ExtResource("2_echk3")
 text = "种地"
 
-[node name="ButtonExit" type="Button" parent="UILayer/Panel/HBoxContainer" index="4"]
+[node name="ButtonGotoKitchen" type="Button" parent="UILayer/Panel/HBoxContainer" index="4"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = ExtResource("2_echk3")
+text = "种地"
+
+[node name="ButtonExit" type="Button" parent="UILayer/Panel/HBoxContainer" index="5"]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -113,4 +121,5 @@ text = "退出"
 [connection signal="pressed" from="UILayer/Panel/HBoxContainer/ButtonLearn" to="." method="_on_button_learn_pressed"]
 [connection signal="pressed" from="UILayer/Panel/HBoxContainer/ButtonMatchGame" to="." method="_on_button_match_game_pressed"]
 [connection signal="pressed" from="UILayer/Panel/HBoxContainer/ButtonGotoStardewValley" to="." method="_on_button_goto_stardew_valley_pressed"]
+[connection signal="pressed" from="UILayer/Panel/HBoxContainer/ButtonGotoKitchen" to="." method="_on_button_goto_kitchen_pressed"]
 [connection signal="pressed" from="UILayer/Panel/HBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]
