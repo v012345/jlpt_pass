@@ -23,7 +23,14 @@ func _on_button_match_game_pressed() -> void:
 	
 
 func _on_button_exam_pressed() -> void:
-	_open_view_wait_book(Const.Views.multiple_choice)
+	# _open_view_wait_book(Const.Views.multiple_choice)
+	var select_book = SceneManager.open_view(Const.Views.select_book, false)
+	select_book.set_info(book_ids, func(book):
+		select_book.queue_free()
+		var temp = range(1,51)
+		temp.shuffle()
+		SceneManager.open_view(Const.Views.multiple_choice).init(temp)
+	)
 
 func _on_button_goto_stardew_valley_pressed() -> void:
 	SceneManager.change_scene(Const.Scenes.stardew_valley)
