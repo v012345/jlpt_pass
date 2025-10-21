@@ -114,8 +114,10 @@ func _on_button_pressed(key: String) -> void:
 
 func _on_show_answer_area_entered(area: Area2D) -> void:
 	_card_info = SceneManager.call_deferred("popup_view", Const.Views.word_info, false, func(card_info):
-		card_info.set_info(area.get_parent().id, Const.Entities.word_card)
+		var card = area.get_parent()
+		card_info.set_info(card.id, Const.Entities.word_card)
 		_card_info = card_info
+		card.play_sounds()
 	)
 
 func _on_show_answer_area_exited(_area: Area2D) -> void:
