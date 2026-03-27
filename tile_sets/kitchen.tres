@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://b6ygpu70is005"]
+[gd_resource type="TileSet" format=3 uid="uid://b6ygpu70is005"]
 
 [ext_resource type="Texture2D" uid="uid://3r74y48gkj1c" path="res://assets/atlas/MovieTheaterJoja_TileSheet.png" id="1_q7j4k"]
 
