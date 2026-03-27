@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://bvkktqfd43gsp" path="res://views/base/view_base.tscn" id="1_c42xu"]
 [ext_resource type="Script" uid="uid://10gyw5aik3x3" path="res://scripts/views/leaper_tool_config.gd" id="2_20frv"]
-[ext_resource type="Theme" uid="uid://b633f7byrj50x" path="res://themes/button.tres" id="3_kmvs6"]
 [ext_resource type="StyleBox" uid="uid://womt1o888d1j" path="res://themes/colors/blue_normal.tres" id="4_3x3t4"]
 [ext_resource type="StyleBox" uid="uid://enjy4pt88w3i" path="res://themes/colors/blue_pressed.tres" id="5_ispas"]
 [ext_resource type="StyleBox" uid="uid://yb3ok1gqjgl3" path="res://themes/colors/blue_hover.tres" id="6_imnip"]
@@ -31,27 +30,45 @@ theme_override_font_sizes/font_size = 20
 text = "C:\\Users\\A"
 placeholder_text = "path to leaper_xslx_to_json_for_godot.py"
 
-[node name="ButtonXlsxToJson" type="Button" parent="UILayer" index="2" unique_id=2075218327]
+[node name="ButtonJsonToXlsx" type="Button" parent="UILayer" index="2" unique_id=2033089826]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -179.0
-offset_top = -54.0
-offset_right = 179.0
-offset_bottom = 54.0
+offset_left = -500.0
+offset_top = 59.0
+offset_right = -142.0
+offset_bottom = 167.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("3_kmvs6")
 theme_override_font_sizes/font_size = 52
 theme_override_styles/normal = ExtResource("4_3x3t4")
 theme_override_styles/pressed = ExtResource("5_ispas")
 theme_override_styles/hover = ExtResource("6_imnip")
-text = "手动更新"
+text = "写回 Xlsx"
 
-[node name="XlsxPath" type="LineEdit" parent="UILayer" index="3" unique_id=1588095791]
+[node name="ButtonXlsxToJson" type="Button" parent="UILayer" index="3" unique_id=2075218327]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 174.0
+offset_top = 56.0
+offset_right = 532.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = ExtResource("4_3x3t4")
+theme_override_styles/pressed = ExtResource("5_ispas")
+theme_override_styles/hover = ExtResource("6_imnip")
+text = "从 Xlsx 读入"
+
+[node name="XlsxPath" type="LineEdit" parent="UILayer" index="4" unique_id=1588095791]
 layout_mode = 0
 offset_left = 187.0
 offset_top = 313.0
@@ -59,7 +76,7 @@ offset_right = 1665.0
 offset_bottom = 394.0
 theme_override_font_sizes/font_size = 20
 
-[node name="Label" type="Label" parent="UILayer" index="4" unique_id=1025307467]
+[node name="Label" type="Label" parent="UILayer" index="5" unique_id=1025307467]
 layout_mode = 0
 offset_left = 35.0
 offset_top = 184.0
@@ -68,7 +85,7 @@ offset_bottom = 215.0
 theme_override_font_sizes/font_size = 22
 text = "脚本工具路径:"
 
-[node name="Label2" type="Label" parent="UILayer" index="5" unique_id=1944092893]
+[node name="Label2" type="Label" parent="UILayer" index="6" unique_id=1944092893]
 layout_mode = 0
 offset_left = 34.0
 offset_top = 335.0
@@ -79,6 +96,7 @@ text = "xlsx表格路径:"
 
 [connection signal="focus_exited" from="UILayer/ToolPath" to="." method="_on_tool_path_focus_exited"]
 [connection signal="text_submitted" from="UILayer/ToolPath" to="." method="_on_tool_path_text_submitted"]
+[connection signal="pressed" from="UILayer/ButtonJsonToXlsx" to="." method="_on_button_json_to_xlsx_pressed"]
 [connection signal="pressed" from="UILayer/ButtonXlsxToJson" to="." method="_on_button_xlsx_to_json_pressed"]
 [connection signal="focus_entered" from="UILayer/XlsxPath" to="." method="_on_xlsx_path_focus_entered"]
 [connection signal="text_submitted" from="UILayer/XlsxPath" to="." method="_on_xlsx_path_text_submitted"]

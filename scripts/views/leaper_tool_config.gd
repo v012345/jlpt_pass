@@ -42,3 +42,12 @@ func _on_xlsx_path_focus_entered() -> void:
 func _on_xlsx_path_text_submitted(new_text: String) -> void:
 	GlobalStorage.save("leaper_xlsx", xlsxPath.text)
 	pass # Replace with function body.
+
+
+func _on_button_json_to_xlsx_pressed() -> void:
+	print(toolPath.text)
+	var output = []
+	var exit_code = OS.execute("py", [toolPath.text+"\\leaper_json_to_xslx_to_for_game.py", "--xlsx",xlsxPath.text + "\\HeroList.xlsx", "--json",ProjectSettings.globalize_path("user://")+"HeroList.json"], output)
+	print("exit_code:", exit_code)
+	print("output:", output)
+	pass # Replace with function body.

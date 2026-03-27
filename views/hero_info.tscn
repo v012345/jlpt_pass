@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://csgq5ydgvjm81"]
+
+[ext_resource type="PackedScene" uid="uid://bvkktqfd43gsp" path="res://views/base/view_base.tscn" id="1_sxr24"]
+[ext_resource type="Script" uid="uid://d0v85mshpwvk4" path="res://scripts/views/hero_info.gd" id="2_o4gd3"]
+
+[node name="ViewBase" unique_id=1520781739 node_paths=PackedStringArray("tree", "hero_name", "hero_id", "material1", "material2", "material3", "costCofig") instance=ExtResource("1_sxr24")]
+script = ExtResource("2_o4gd3")
+tree = NodePath("UILayer/Tree")
+hero_name = NodePath("UILayer/HeroName")
+hero_id = NodePath("UILayer/HeroId")
+material1 = NodePath("UILayer/Material1")
+material2 = NodePath("UILayer/Material2")
+material3 = NodePath("UILayer/Material3")
+costCofig = NodePath("UILayer/CostConfig")
+
+[node name="ColorRect" type="ColorRect" parent="UILayer" index="0" unique_id=2063966389]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3854925, 0.38549247, 0.38549247, 1)
+
+[node name="HeroId" type="Label" parent="UILayer" index="1" unique_id=1030479684]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 83.0
+offset_right = 203.0
+offset_bottom = 106.0
+text = "需要材料"
+
+[node name="HeroName" type="Label" parent="UILayer" index="2" unique_id=874353184]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 86.0
+offset_right = 343.0
+offset_bottom = 109.0
+text = "需要材料"
+
+[node name="Label2" type="Label" parent="UILayer" index="3" unique_id=381383309]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 225.0
+offset_right = 182.0
+offset_bottom = 248.0
+text = "需要材料"
+
+[node name="Label5" type="Label" parent="UILayer" index="4" unique_id=219419478]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 153.0
+offset_right = 178.0
+offset_bottom = 176.0
+text = "升级材料"
+
+[node name="ButtonApplyAll" type="Button" parent="UILayer" index="5" unique_id=943607657]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 942.0
+offset_right = 855.0
+offset_bottom = 1031.0
+theme_override_font_sizes/font_size = 30
+text = "应用到全部英雄"
+
+[node name="ButtonParse" type="Button" parent="UILayer" index="6" unique_id=270531376]
+layout_mode = 0
+offset_left = 1471.0
+offset_top = 580.0
+offset_right = 1756.0
+offset_bottom = 669.0
+theme_override_font_sizes/font_size = 30
+text = "解析并写入"
+
+[node name="ButtonApplySelf" type="Button" parent="UILayer" index="7" unique_id=1087103916]
+layout_mode = 0
+offset_left = 1087.0
+offset_top = 932.0
+offset_right = 1372.0
+offset_bottom = 1021.0
+theme_override_font_sizes/font_size = 30
+text = "只更新自己"
+
+[node name="CostConfig" type="TextEdit" parent="UILayer" index="8" unique_id=1035301947]
+layout_mode = 0
+offset_left = 1358.0
+offset_top = 12.0
+offset_right = 1843.0
+offset_bottom = 538.0
+
+[node name="Material1" type="LineEdit" parent="UILayer" index="9" unique_id=1714747187]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 148.0
+offset_right = 298.5
+offset_bottom = 179.0
+
+[node name="Material2" type="LineEdit" parent="UILayer" index="10" unique_id=512824994]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 147.0
+offset_right = 409.5
+offset_bottom = 178.0
+
+[node name="Material3" type="LineEdit" parent="UILayer" index="11" unique_id=1960327078]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 146.0
+offset_right = 533.5
+offset_bottom = 177.0
+
+[node name="Tree" type="Tree" parent="UILayer" index="12" unique_id=1287461729]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 220.0
+offset_right = 539.0343
+offset_bottom = 658.5467
+columns = 4
+
+[connection signal="pressed" from="UILayer/ButtonApplyAll" to="." method="_on_button_apply_all_pressed"]
+[connection signal="pressed" from="UILayer/ButtonParse" to="." method="_on_button_parse_pressed"]
