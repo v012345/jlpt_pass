@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c15mau462i4h7"]
+[gd_scene format=3 uid="uid://c15mau462i4h7"]
 
 [ext_resource type="PackedScene" uid="uid://bvkktqfd43gsp" path="res://views/base/view_base.tscn" id="1_m2s7d"]
 [ext_resource type="Theme" uid="uid://b633f7byrj50x" path="res://themes/button.tres" id="2_echk3"]
@@ -26,10 +26,10 @@ content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
 
-[node name="MainMenu" instance=ExtResource("1_m2s7d")]
+[node name="MainMenu" unique_id=1634599299 instance=ExtResource("1_m2s7d")]
 script = ExtResource("2_mvpi2")
 
-[node name="Panel" type="Panel" parent="UILayer" index="0"]
+[node name="Panel" type="Panel" parent="UILayer" index="0" unique_id=1051893885]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -45,7 +45,7 @@ grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_gam8q")
 metadata/_edit_group_ = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/Panel" index="0"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/Panel" index="0" unique_id=1788595466]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,67 +54,67 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
-[node name="ButtonExam" type="Button" parent="UILayer/Panel/HBoxContainer" index="0"]
+[node name="ButtonExam" type="Button" parent="UILayer/Panel/HBoxContainer" index="0" unique_id=252339651]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 theme = ExtResource("2_echk3")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_le8ob")
-theme_override_styles/hover = ExtResource("3_eilfd")
-theme_override_styles/pressed = ExtResource("3_le8ob")
 theme_override_styles/normal = ExtResource("4_eilfd")
+theme_override_styles/pressed = ExtResource("3_le8ob")
+theme_override_styles/hover = ExtResource("3_eilfd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_le8ob")
 text = "考试
 "
 
-[node name="ButtonLearn" type="Button" parent="UILayer/Panel/HBoxContainer" index="1"]
+[node name="ButtonLearn" type="Button" parent="UILayer/Panel/HBoxContainer" index="1" unique_id=1681169925]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 theme = ExtResource("2_echk3")
-theme_override_styles/hover = ExtResource("3_eilfd")
-theme_override_styles/pressed = ExtResource("3_le8ob")
 theme_override_styles/normal = ExtResource("4_eilfd")
+theme_override_styles/pressed = ExtResource("3_le8ob")
+theme_override_styles/hover = ExtResource("3_eilfd")
 text = "学习"
 
-[node name="ButtonMatchGame" type="Button" parent="UILayer/Panel/HBoxContainer" index="2"]
+[node name="ButtonMatchGame" type="Button" parent="UILayer/Panel/HBoxContainer" index="2" unique_id=118484682]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 theme = ExtResource("2_echk3")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_le8ob")
-theme_override_styles/hover = ExtResource("3_eilfd")
-theme_override_styles/pressed = ExtResource("3_le8ob")
 theme_override_styles/normal = ExtResource("4_eilfd")
+theme_override_styles/pressed = ExtResource("3_le8ob")
+theme_override_styles/hover = ExtResource("3_eilfd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_le8ob")
 text = "巩固"
 
-[node name="ButtonGotoStardewValley" type="Button" parent="UILayer/Panel/HBoxContainer" index="3"]
+[node name="ButtonGotoStardewValley" type="Button" parent="UILayer/Panel/HBoxContainer" index="3" unique_id=440203476]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 theme = ExtResource("2_echk3")
-text = "种地"
+text = "更新表"
 
-[node name="ButtonGotoKitchen" type="Button" parent="UILayer/Panel/HBoxContainer" index="4"]
+[node name="ButtonGotoKitchen" type="Button" parent="UILayer/Panel/HBoxContainer" index="4" unique_id=2102280206]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 theme = ExtResource("2_echk3")
-text = "种地"
+text = "HeroList"
 
-[node name="ButtonExit" type="Button" parent="UILayer/Panel/HBoxContainer" index="5"]
+[node name="ButtonExit" type="Button" parent="UILayer/Panel/HBoxContainer" index="5" unique_id=572022946]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 theme = ExtResource("2_echk3")
-theme_override_styles/hover = ExtResource("6_dwc5m")
-theme_override_styles/pressed = ExtResource("7_mvpi2")
 theme_override_styles/normal = ExtResource("8_g5uy4")
+theme_override_styles/pressed = ExtResource("7_mvpi2")
+theme_override_styles/hover = ExtResource("6_dwc5m")
 text = "退出"
 
 [connection signal="pressed" from="UILayer/Panel/HBoxContainer/ButtonExam" to="." method="_on_button_exam_pressed"]

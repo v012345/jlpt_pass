@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bl500unvm5xtm"]
+
+[ext_resource type="PackedScene" uid="uid://bvkktqfd43gsp" path="res://views/base/view_base.tscn" id="1_murwe"]
+[ext_resource type="Script" uid="uid://cnvx0ah0valj3" path="res://scripts/views/hero_list_xlsx.gd" id="2_21oeg"]
+[ext_resource type="PackedScene" uid="uid://cekm0jgfdbbyj" path="res://components/ui/base/scroll_list_base.tscn" id="3_cxo4f"]
+
+[node name="ViewBase" unique_id=1542795477 node_paths=PackedStringArray("hero_list") instance=ExtResource("1_murwe")]
+script = ExtResource("2_21oeg")
+hero_list = NodePath("UILayer/ScrollListBase")
+
+[node name="ColorRect" type="ColorRect" parent="UILayer" index="0" unique_id=626185491]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.39498678, 0.3949867, 0.3949867, 1)
+
+[node name="ScrollListBase" parent="UILayer" index="1" unique_id=1053451883 instance=ExtResource("3_cxo4f")]
+layout_mode = 1
+offset_left = 106.0
+offset_top = 172.0
+offset_right = -130.0
+offset_bottom = -152.0

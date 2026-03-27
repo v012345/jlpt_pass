@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqofnamwlvhws"]
+[gd_scene format=3 uid="uid://dqofnamwlvhws"]
 
 [ext_resource type="PackedScene" uid="uid://bvkktqfd43gsp" path="res://views/base/view_base.tscn" id="1_mj2oh"]
 [ext_resource type="StyleBox" uid="uid://daouumpvnupq" path="res://themes/popup_bg.tres" id="2_kl0ky"]
@@ -8,13 +8,13 @@
 [ext_resource type="StyleBox" uid="uid://dkxxfp75jmyd6" path="res://themes/font_bg.tres" id="4_vntk3"]
 [ext_resource type="Theme" uid="uid://b633f7byrj50x" path="res://themes/button.tres" id="5_j7t5h"]
 
-[node name="ExamResult" node_paths=PackedStringArray("wrong", "right", "comfirm_btn") instance=ExtResource("1_mj2oh")]
+[node name="ExamResult" unique_id=1685129080 node_paths=PackedStringArray("wrong", "right", "comfirm_btn") instance=ExtResource("1_mj2oh")]
 script = ExtResource("2_rw4e2")
 wrong = NodePath("UILayer/Panel/TextureRect/Label")
 right = NodePath("UILayer/Panel/TextureRect2/Label3")
 comfirm_btn = NodePath("UILayer/Panel/ButtonLearnWrongChoice")
 
-[node name="Control" type="Control" parent="UILayer" index="0"]
+[node name="Control" type="Control" parent="UILayer" index="0" unique_id=837293415]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,7 +22,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="UILayer" index="1"]
+[node name="Panel" type="Panel" parent="UILayer" index="1" unique_id=677372965]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -37,7 +37,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("2_kl0ky")
 
-[node name="TextureRect" type="TextureRect" parent="UILayer/Panel" index="0"]
+[node name="TextureRect" type="TextureRect" parent="UILayer/Panel" index="0" unique_id=2101359150]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -51,7 +51,7 @@ texture = ExtResource("3_vntk3")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="UILayer/Panel/TextureRect" index="0"]
+[node name="Label" type="Label" parent="UILayer/Panel/TextureRect" index="0" unique_id=1794273889]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -71,7 +71,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect2" type="TextureRect" parent="UILayer/Panel" index="1"]
+[node name="TextureRect2" type="TextureRect" parent="UILayer/Panel" index="1" unique_id=2000050686]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -85,7 +85,7 @@ texture = ExtResource("4_rw4e2")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label3" type="Label" parent="UILayer/Panel/TextureRect2" index="0"]
+[node name="Label3" type="Label" parent="UILayer/Panel/TextureRect2" index="0" unique_id=916796863]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -105,7 +105,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ButtonLearnWrongChoice" type="Button" parent="UILayer/Panel" index="2"]
+[node name="ButtonLearnWrongChoice" type="Button" parent="UILayer/Panel" index="2" unique_id=251910946]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5

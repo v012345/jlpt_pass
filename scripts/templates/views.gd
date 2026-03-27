@@ -10,3 +10,5 @@ class_name AllViews
 @export var exam_result:PackedScene
 @export var two_buttons:PackedScene
 @export var right_or_wrong:PackedScene
+@export var hero_list_xlsx:PackedScene
+@export var leaper_tool_config:PackedScene

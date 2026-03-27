@@ -33,30 +33,31 @@ func _on_button_exam_pressed() -> void:
 	)
 
 func _on_button_goto_stardew_valley_pressed() -> void:
+	SceneManager.open_view(Const.Views.leaper_tool_config)
 	#SceneManager.change_scene(Const.Scenes.stardew_valley)
-	var output = []
-	var exit_code = OS.execute("py", ["C:\\Users\\A\\Desktop\\work\\NightOwlToolsV2\\tool_scripts\\Python\\test.py", "--xlsx","C:\\Users\\A\\Desktop\\work\\leaper\\leaper_design\\design\\tables\\HeroList.xlsx", "--json",ProjectSettings.globalize_path("user://")+"HeroList.json"], output)
-	print("exit_code:", exit_code)
-	print("output:", output)
-	var path = "user://HeroList.json"
-	# 1. 打开文件
-	var file = FileAccess.open(path, FileAccess.READ)
-	if file == null:
-		print("文件打开失败:", path)
-		return
+	# var output = []
+	# var exit_code = OS.execute("py", ["C:\\Users\\A\\Desktop\\work\\NightOwlToolsV2\\tool_scripts\\Python\\test.py", "--xlsx","C:\\Users\\A\\Desktop\\work\\leaper\\leaper_design\\design\\tables\\HeroList.xlsx", "--json",ProjectSettings.globalize_path("user://")+"HeroList.json"], output)
+	# print("exit_code:", exit_code)
+	# print("output:", output)
+	# var path = "user://HeroList.json"
+	# # 1. 打开文件
+	# var file = FileAccess.open(path, FileAccess.READ)
+	# if file == null:
+	# 	print("文件打开失败:", path)
+	# 	return
 
 
-	# 2. 读取文本
-	var text = file.get_as_text()
+	# # 2. 读取文本
+	# var text = file.get_as_text()
 
-	# 3. 解析 JSON
-	var data = JSON.parse_string(text)
+	# # 3. 解析 JSON
+	# var data = JSON.parse_string(text)
 
-	if data == null:
-		print("JSON 解析失败")
-		return
+	# if data == null:
+	# 	print("JSON 解析失败")
+	# 	return
 
-	print(data)
+	# print(data)
 
 
 func _on_button_exit_pressed() -> void:
@@ -64,4 +65,5 @@ func _on_button_exit_pressed() -> void:
 
 
 func _on_button_goto_kitchen_pressed() -> void:
-	SceneManager.change_scene(Const.Scenes.kitchen)
+	# SceneManager.change_scene(Const.Scenes.kitchen)
+	SceneManager.open_view(Const.Views.hero_list_xlsx)

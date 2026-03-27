@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://drdjy3mrwq1dk"]
+
+[ext_resource type="PackedScene" uid="uid://b1n1grxcxa3kg" path="res://components/ui/base/scroll_list_item_base.tscn" id="1_lcahh"]
+[ext_resource type="Script" uid="uid://c82mu004jlupq" path="res://scripts/components/ui/hero_list_item.gd" id="2_7hw02"]
+
+[node name="ScrollListItemBase" unique_id=1851686460 instance=ExtResource("1_lcahh")]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 100.0
+offset_bottom = 100.0
+script = ExtResource("2_7hw02")
+
+[node name="ColorRect" type="ColorRect" parent="UILayer" index="0" unique_id=383198555]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.06479404, 0.14460835, 0.13555157, 1)
+
+[node name="Label" type="Label" parent="UILayer" index="1" unique_id=1633847589]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 20
+text = "qwe"
