@@ -3,12 +3,19 @@
 [ext_resource type="PackedScene" uid="uid://bvkktqfd43gsp" path="res://views/base/view_base.tscn" id="1_a1sc1"]
 [ext_resource type="Script" uid="uid://df3pgi7wv8e63" path="res://scripts/views/leaper/leaper_item_select_view.gd" id="2_ivxbf"]
 [ext_resource type="PackedScene" uid="uid://cekm0jgfdbbyj" path="res://components/ui/base/scroll_list_base.tscn" id="3_3ckvp"]
+[ext_resource type="Shader" uid="uid://ijk5tigos3ft" path="res://shaders/gaussian_blur.gdshader" id="4_blur"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_blur"]
+shader = ExtResource("4_blur")
+shader_parameter/blur_amount = 5.77600027436
+shader_parameter/dim = 0.56400002679
 
 [node name="ViewBase" unique_id=1427704322 node_paths=PackedStringArray("item_list") instance=ExtResource("1_a1sc1")]
 script = ExtResource("2_ivxbf")
 item_list = NodePath("UILayer/ScrollListBase")
 
 [node name="ColorRect" type="ColorRect" parent="UILayer" index="0" unique_id=705676102]
+material = SubResource("ShaderMaterial_blur")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
