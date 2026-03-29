@@ -138,5 +138,16 @@ func _on_import_lv_config_btn_pressed() -> void:
 
 
 func _on_lv_up_material_apply_btn_pressed() -> void:
-	SceneManager.open_view(Const.Views.leaper_hero_select_view,false)
+	SceneManager.open_view(Const.Views.leaper_hero_select_view, false).init([current_hero_id]).set_select_item_callback(func(args):
+		# var view: LeaperHeroSelectView = SceneManager.get_current_view()
+		# for item in view.items:
+		# 	if item.id == current_hero_id:
+		# 		item.setSelect(false)
+		# Model.LeaperHerosModel.getHeroDataById(current_hero_id).UpLvMaterials = [int(args[0]), int(args[1]), int(args[2])]
+		# material_1_btn.text = str(args[0])
+		# material_2_btn.text = str(args[1])
+		# material_3_btn.text = str(args[2])
+		# print("selected hero ids:", args)
+		print("selected hero ids:", args)
+		)
 	pass # Replace with function body.
