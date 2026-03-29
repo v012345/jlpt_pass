@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bf7h0f5cv231d"]
+
+[ext_resource type="Script" uid="uid://cjuv13mu2naxy" path="res://scripts/models/leaper_heros_model.gd" id="1_va17y"]
+
+[node name="LeaperHerosModel" type="Node" unique_id=273799551]
+script = ExtResource("1_va17y")

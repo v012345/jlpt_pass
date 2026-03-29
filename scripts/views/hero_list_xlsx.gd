@@ -8,21 +8,12 @@ func _ready() -> void:
 	hero_list.item_be_clicked.connect(_hero_be_selected)
 	var items = []
 	var hero_list_item = Const.Components.hero_list_item
-	for id in GlobalDb.leaper_tables["HeroList"].keys():
-		var item = hero_list_item.instantiate()
+	for id in Model.LeaperHerosModel.getAllHeroIds():
+		var item:HeroListItem = hero_list_item.instantiate()
 		item.init(id)
 		items.append(item)
 	hero_list.add_items(items)
 	pass # Replace with function body.
 
 func _hero_be_selected(hero: ScrollListItemBase):
-	#emit_signal("selet_he", hero)
 	SceneManager.open_view(Const.Views.hero_info).init(hero.id)
-	pass
-	#if select_callback.is_valid():
-		#select_callback.call(book)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

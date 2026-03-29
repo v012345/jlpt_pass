@@ -25,7 +25,7 @@ func change_scene(scene, cb: Callable = Callable()):
 	assert(new_scene is SceneBase, "change_scene need a SceneBase")
 	if cb.is_valid():
 		cb.call(new_scene)
-	new_scene.add_child(EntityManager.player)
+	# new_scene.add_child(EntityManager.player)
 	scene_layer.add_child(new_scene)
 	current_scene = new_scene
 	return new_scene

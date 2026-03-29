@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://15xhuw5irglj"]
+
+[ext_resource type="PackedScene" uid="uid://i24wg3xc1a3y" path="res://scenes/base/scene_base.tscn" id="1_bsa7a"]
+[ext_resource type="Script" uid="uid://kl1ib2gak2ad" path="res://scripts/scenes/leaper_scene.gd" id="2_osegr"]
+[ext_resource type="PackedScene" uid="uid://bt37wsrwkfc3y" path="res://views/leaper_tool_view.tscn" id="3_ciowm"]
+
+[node name="LeaperScene" unique_id=1406251521 instance=ExtResource("1_bsa7a")]
+script = ExtResource("2_osegr")
+
+[node name="SceneInitializer" parent="." index="0"]
+root_view = ExtResource("3_ciowm")
+
+[node name="ColorRect" type="ColorRect" parent="." index="1" unique_id=765993870]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5, 0.5, 0.5, 1)

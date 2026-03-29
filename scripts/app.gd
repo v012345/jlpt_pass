@@ -23,12 +23,14 @@ func _ready() -> void:
 	Const.Entities = $Entities
 	_register_models()
 	EntityManager.create_player()
-	SceneManager.change_scene(Const.Scenes.balatro)
+	SceneManager.change_scene(Const.Scenes.leaper_scene)
 	print("App Ready!")
 	
 func _register_models():
 	Model.JapaneseModel = $Models.japanese_model.instantiate()
 	Model.add_child(Model.JapaneseModel)
+	Model.LeaperHerosModel =  $Models.leaper_heros_model.instantiate()
+	Model.add_child(Model.LeaperHerosModel)
 
 func _play_segment(path: String, start_time: float, end_time: float):
 	var player = $AudioStreamPlayer

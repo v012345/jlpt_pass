@@ -5,17 +5,14 @@ var words = {
 	"books" : preload("res://scripts/db/words/books.gd").DATA
 }
 var leaper_tables = {
-	"HeroList" : null
+	"HeroList" : {}
 }
 func _ready() -> void:
 	var file = FileAccess.open("user://HeroList.json", FileAccess.READ)
-	if leaper_tables["HeroList"] == null:
-		print("文件打开失败:", file)
-		return
-	# # 2. 读取文本
-	var text = file.get_as_text()
-	# # 3. 解析 JSON
-	leaper_tables["HeroList"] = JSON.parse_string(text)
+	if file != null:
+		var text = file.get_as_text()
+		leaper_tables["HeroList"] = JSON.parse_string(text)
+	
 	print("DB Ready!")
 
 func reload():

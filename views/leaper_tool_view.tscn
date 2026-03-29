@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://bt37wsrwkfc3y"]
+
+[ext_resource type="PackedScene" uid="uid://bvkktqfd43gsp" path="res://views/base/view_base.tscn" id="1_syj7v"]
+[ext_resource type="Script" uid="uid://clelw4qsg3d0m" path="res://scripts/views/leaper_tool_view.gd" id="2_tw4ls"]
+
+[node name="LeaperToolView" unique_id=2128800323 instance=ExtResource("1_syj7v")]
+script = ExtResource("2_tw4ls")
+
+[node name="ColorRect" type="ColorRect" parent="UILayer" index="0" unique_id=9502431]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="GridContainer" type="GridContainer" parent="UILayer" index="1" unique_id=774484485]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.112
+anchor_top = 0.127
+anchor_right = 0.822
+anchor_bottom = 0.883
+offset_left = 0.95999146
+offset_top = 1.8399963
+offset_right = 11.76001
+offset_bottom = -4.6400146
+columns = 5
+
+[node name="MainRoleBtn" type="Button" parent="UILayer/GridContainer" index="0" unique_id=80973121]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 35
+text = "主角"
+
+[node name="HerosBtn" type="Button" parent="UILayer/GridContainer" index="1" unique_id=1440465155]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 35
+text = "英雄"
+
+[node name="ItemBtn" type="Button" parent="UILayer/GridContainer" index="2" unique_id=270882563]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 35
+text = "物品"
+
+[node name="SkillBtn" type="Button" parent="UILayer/GridContainer" index="3" unique_id=1047834934]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 35
+text = "技能"
+
+[node name="MonstersBtn" type="Button" parent="UILayer/GridContainer" index="4" unique_id=2022795173]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 35
+text = "怪物"
+
+[node name="ConfigBtn" type="Button" parent="UILayer/GridContainer" index="5" unique_id=1063374292]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 35
+text = "世界配置"
+
+[node name="ActivityBtn" type="Button" parent="UILayer/GridContainer" index="6" unique_id=1350547429]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 35
+text = "活动"
+
+[node name="PayBtn" type="Button" parent="UILayer/GridContainer" index="7" unique_id=1365831390]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 35
+text = "付费"
+
+[node name="MapBtn" type="Button" parent="UILayer/GridContainer" index="8" unique_id=1684842421]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 35
+text = "地图"
+
+[node name="OtherBtn" type="Button" parent="UILayer/GridContainer" index="9" unique_id=140650458]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 35
+text = "其他"
+
+[connection signal="pressed" from="UILayer/GridContainer/MainRoleBtn" to="." method="_on_main_role_btn_pressed"]
+[connection signal="pressed" from="UILayer/GridContainer/HerosBtn" to="." method="_on_heros_btn_pressed"]

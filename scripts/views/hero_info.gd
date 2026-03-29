@@ -24,6 +24,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func init(id: String):
+	return
 	current_hero_id = id
 	var hero_data = GlobalDb.leaper_tables["HeroList"][id]
 	hero_name.text = "名字 : %s" % hero_data["Name"]
@@ -52,10 +53,6 @@ func init(id: String):
 			item.set_text(2, "0")
 			item.set_text(3, "0")
 
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
 	pass
 
 
