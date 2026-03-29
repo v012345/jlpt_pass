@@ -130,3 +130,8 @@ func _on_material_btn_pressed(material_btn: Button, extra_arg_0: int) -> void:
 		print("selected item id:", args)
 		pass )
 	pass # Replace with function body.
+
+
+func _on_import_lv_config_btn_pressed() -> void:
+	SceneManager.open_view(Const.Views.leaper_import_view, false)
+	pass # Replace with function body.

@@ -224,7 +224,7 @@ offset_top = 28.0
 offset_right = 358.0
 offset_bottom = 68.0
 
-[node name="Button" type="Button" parent="UILayer" index="12" unique_id=516991113]
+[node name="ImportLvConfigBtn" type="Button" parent="UILayer" index="12" unique_id=516991113]
 layout_mode = 0
 offset_left = 572.0
 offset_top = 546.0
@@ -255,6 +255,7 @@ size_flags_horizontal = 3
 
 [connection signal="pressed" from="UILayer/ButtonApplyAll" to="." method="_on_button_apply_all_pressed"]
 [connection signal="pressed" from="UILayer/ButtonParse" to="." method="_on_button_parse_pressed"]
+[connection signal="pressed" from="UILayer/ImportLvConfigBtn" to="." method="_on_import_lv_config_btn_pressed"]
 [connection signal="pressed" from="UILayer/HBoxContainer/ButtonMaterial1" to="." method="_on_material_btn_pressed" flags=18 binds= [1]]
 [connection signal="pressed" from="UILayer/HBoxContainer/ButtonMaterial2" to="." method="_on_material_btn_pressed" flags=18 binds= [2]]
 [connection signal="pressed" from="UILayer/HBoxContainer/ButtonMaterial3" to="." method="_on_material_btn_pressed" flags=18 binds= [3]]

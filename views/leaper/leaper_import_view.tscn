@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cq5y6cgw3abm7"]
+
+[ext_resource type="PackedScene" uid="uid://bvkktqfd43gsp" path="res://views/base/view_base.tscn" id="1_mjhud"]
+[ext_resource type="Script" uid="uid://cuma6d3ghav2m" path="res://scripts/views/leaper/leaper_import_view.gd" id="2_rcn2s"]
+[ext_resource type="Shader" uid="uid://ijk5tigos3ft" path="res://shaders/gaussian_blur.gdshader" id="3_jceqy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_258qn"]
+shader = ExtResource("3_jceqy")
+shader_parameter/blur_amount = 2.0
+shader_parameter/lod = 1.5
+shader_parameter/dim = 0.3
+
+[node name="LeaperImportView" unique_id=1712689856 instance=ExtResource("1_mjhud")]
+script = ExtResource("2_rcn2s")
+
+[node name="ColorRect" type="ColorRect" parent="UILayer" index="0" unique_id=2136759260]
+material = SubResource("ShaderMaterial_258qn")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5, 0.5, 0.5, 0.49411765)
+
+[node name="TextEdit" type="TextEdit" parent="UILayer" index="1" unique_id=430523362]
+layout_mode = 0
+offset_left = 597.0
+offset_top = 250.0
+offset_right = 1233.0
+offset_bottom = 788.0
+placeholder_text = "从 Excel 中直接复制过来, 使用制表符分隔."
+
+[node name="ButtonCancel" type="Button" parent="UILayer" index="2" unique_id=1696636742]
+layout_mode = 0
+offset_left = 954.0
+offset_top = 857.0
+offset_right = 1221.0
+offset_bottom = 915.0
+text = "取消"
+
+[node name="ButtonConfirm" type="Button" parent="UILayer" index="3" unique_id=907498991]
+layout_mode = 0
+offset_left = 633.0
+offset_top = 854.0
+offset_right = 900.0
+offset_bottom = 912.0
+text = "确认"
+
+[connection signal="pressed" from="UILayer/ButtonCancel" to="." method="_on_button_cancel_pressed"]
