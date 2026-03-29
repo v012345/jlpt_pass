@@ -109,10 +109,10 @@ hide_root = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UILayer" index="10" unique_id=1412501865]
 layout_mode = 0
-offset_left = 186.0
-offset_top = 694.0
-offset_right = 484.0
-offset_bottom = 955.0
+offset_left = 129.0
+offset_top = 691.0
+offset_right = 427.0
+offset_bottom = 952.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="UILayer/VBoxContainer" index="0" unique_id=1152166135]
 layout_mode = 2
@@ -224,7 +224,15 @@ offset_top = 28.0
 offset_right = 358.0
 offset_bottom = 68.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UILayer" index="12" unique_id=1173763214]
+[node name="Button" type="Button" parent="UILayer" index="12" unique_id=516991113]
+layout_mode = 0
+offset_left = 572.0
+offset_top = 546.0
+offset_right = 746.0
+offset_bottom = 591.0
+text = "表格导入"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer" index="13" unique_id=1173763214]
 layout_mode = 0
 offset_left = 230.0
 offset_top = 154.0
