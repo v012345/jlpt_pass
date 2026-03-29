@@ -14,3 +14,9 @@ func getLeaperTablesPath():
 
 func getLeaperAssetsPath():
 	return "C:/Users/NightOwl/Desktop/work/leaper-code/assets/"
+
+func getLeaperTables():
+	return ["HeroList", "ItemList", "Text", "HeroSkillUnLock", "RewardNew"]
+
+func initLeaperModels():
+	Model.LeaperHerosModel.init()

@@ -23,6 +23,7 @@ offset_top = -40.0
 offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+stretch_mode = 2
 
 [node name="Label" type="Label" parent="UILayer" index="1" unique_id=1633847589]
 layout_mode = 1

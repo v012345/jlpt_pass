@@ -18,7 +18,7 @@ func _ready() -> void:
 		if x >= 30: x = 1
 	)
 	thread = Thread.new()
-	# WorkerThreadPool.add_task(func(): pass)
+	# WorkerThreadPool.add_task(_thread_func)
 	thread.start(_thread_func)
 	pass # Replace with function body.
 
@@ -42,34 +42,25 @@ func _thread_func():
 		return
 	call_deferred("_update_message_label", "leaper_check_necessary_package 运行成功")
 	call_deferred("_start_progress_tween", 20)
-
-	call_deferred("_update_message_label", "正在解析 Tables...")
-
-	output.clear()
-	exit_code = OS.execute("py", ["-X", "utf8",
-		Model.LeaperConfigModel.getPythonScriptPath() + "leaper_xslx_to_json_for_godot.py",
-		"--xlsx", Model.LeaperConfigModel.getLeaperTablesPath() + "HeroList.xlsx",
-		"--json", ProjectSettings.globalize_path("user://") + "HeroList.json"], output, true
-	)
-	print("exit_code:", exit_code)
-	if exit_code != 0:
-		SceneManager.show_notice("HeroList 解析失败", 9999)
-		print(output)
-		return
-	call_deferred("_start_progress_tween", 30)
-
-	output.clear()
-	exit_code = OS.execute("py", ["-X", "utf8",
-		Model.LeaperConfigModel.getPythonScriptPath() + "leaper_xslx_to_json_for_godot.py",
-		"--xlsx", Model.LeaperConfigModel.getLeaperTablesPath() + "ItemList.xlsx",
-		"--json", ProjectSettings.globalize_path("user://") + "ItemList.json"], output, true
-	)
-	if exit_code != 0:
-		SceneManager.show_notice("ItemList 解析失败", 9999)
-		return
-
-	call_deferred("_start_progress_tween", 100)
+	var all_tables = Model.LeaperConfigModel.getLeaperTables()
+	for i in range(all_tables.size()):
+		var table_name = all_tables[i]
+		call_deferred("_update_message_label", "正在解析 %s" % table_name)
+		if not _parse_table(table_name): return
+		call_deferred("_start_progress_tween", 20.0 + (i + 1.0) / all_tables.size() * 80)
 	call_deferred("_on_task_done")
+
+func _parse_table(table_name: String):
+	var output = []
+	var exit_code = OS.execute("py", ["-X", "utf8",
+		Model.LeaperConfigModel.getPythonScriptPath() + "leaper_xslx_to_json_for_godot.py",
+		"--xlsx", Model.LeaperConfigModel.getLeaperTablesPath() + "%s.xlsx" % table_name,
+		"--json", ProjectSettings.globalize_path("user://") + "%s.json" % table_name], output, true
+	)
+	if exit_code != 0:
+		SceneManager.show_notice("%s 解析失败" % table_name, 9999)
+		return false
+	return true
 
 func _start_progress_tween(progress: float):
 	if not is_instance_valid(progress_bar):
@@ -83,14 +74,11 @@ func _update_message_label(text: String):
 	message_label.text = text
 
 func _on_task_done():
+	Model.LeaperConfigModel.initLeaperModels()
 	self.queue_free()
 	# label.text = "完成了"
 
 func _exit_tree():
 	timer.stop()
-	if thread:
-		thread.wait_to_finish()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	# if thread:
+	# 	thread.wait_to_finish()
