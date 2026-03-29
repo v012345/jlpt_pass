@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://xxnadnirp75j" path="res://templates/entities.tscn" id="22_kd73m"]
 [ext_resource type="PackedScene" uid="uid://cbxfdaa1xna6y" path="res://entities/player.tscn" id="23_j4pmb"]
 [ext_resource type="PackedScene" uid="uid://bf7h0f5cv231d" path="res://models/leaper_heros_model.tscn" id="27_2ysod"]
+[ext_resource type="PackedScene" uid="uid://dwb843o2ip2ua" path="res://models/leaper/leaper_config_model.tscn" id="29_aarq4"]
 
 [node name="App" type="Node" unique_id=729202418]
 script = ExtResource("1_j6dmo")
@@ -67,6 +68,7 @@ hero_list_item = ExtResource("22_i77su")
 [node name="Models" parent="." unique_id=1635166043 instance=ExtResource("20_iho0w")]
 japanese_model = ExtResource("21_dv8dk")
 leaper_heros_model = ExtResource("27_2ysod")
+leaper_config_model = ExtResource("29_aarq4")
 
 [node name="Entities" parent="." unique_id=549574328 instance=ExtResource("22_kd73m")]
 player = ExtResource("23_j4pmb")

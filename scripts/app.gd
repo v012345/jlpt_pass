@@ -32,6 +32,8 @@ func _register_models():
 	Model.add_child(Model.JapaneseModel)
 	Model.LeaperHerosModel =  $Models.leaper_heros_model.instantiate()
 	Model.add_child(Model.LeaperHerosModel)
+	Model.LeaperConfigModel =  $Models.leaper_config_model.instantiate()
+	Model.add_child(Model.LeaperConfigModel)
 
 func _play_segment(path: String, start_time: float, end_time: float):
 	var player = $AudioStreamPlayer

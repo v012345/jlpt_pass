@@ -3,11 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://bvkktqfd43gsp" path="res://views/base/view_base.tscn" id="1_vnqct"]
 [ext_resource type="Script" uid="uid://6masp8xvsyl3" path="res://scripts/views/leaper/waiting_view.gd" id="2_183kc"]
 
-[node name="ViewBase" unique_id=1844738311 node_paths=PackedStringArray("dot_label", "timer", "progress_bar") instance=ExtResource("1_vnqct")]
+[node name="ViewBase" unique_id=1844738311 node_paths=PackedStringArray("dot_label", "timer", "progress_bar", "message_label") instance=ExtResource("1_vnqct")]
 script = ExtResource("2_183kc")
 dot_label = NodePath("UILayer/DotLabel")
 timer = NodePath("UILayer/Timer")
 progress_bar = NodePath("UILayer/ProgressBar")
+message_label = NodePath("UILayer/Label")
 
 [node name="ColorRect" type="ColorRect" parent="UILayer" index="0" unique_id=1130721329]
 layout_mode = 1
