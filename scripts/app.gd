@@ -17,14 +17,15 @@ func _ready() -> void:
 	SceneManager.scene_layer = $Scene
 	SceneManager.view_layer = $View
 	SceneManager.popup_layer = $Popup
+	SceneManager.notice_layer = $Notice
 	Const.Scenes = $Scenes
 	Const.Views = $Views
 	Const.Components = $Components
 	Const.Entities = $Entities
 	_register_models()
 	EntityManager.create_player()
-	SceneManager.change_scene(Const.Scenes.leaper_scene)
 	print("App Ready!")
+	SceneManager.change_scene(Const.Scenes.leaper_scene)
 	
 func _register_models():
 	Model.JapaneseModel = $Models.japanese_model.instantiate()

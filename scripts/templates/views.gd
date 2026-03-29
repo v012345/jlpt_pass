@@ -13,3 +13,4 @@ class_name AllViews
 @export var hero_list_xlsx:PackedScene
 @export var leaper_tool_config:PackedScene
 @export var hero_info:PackedScene
+@export var waiting_view:PackedScene

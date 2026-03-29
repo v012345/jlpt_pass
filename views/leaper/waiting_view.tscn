@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://e6mynohwy4fk"]
+
+[ext_resource type="PackedScene" uid="uid://bvkktqfd43gsp" path="res://views/base/view_base.tscn" id="1_vnqct"]
+[ext_resource type="Script" uid="uid://6masp8xvsyl3" path="res://scripts/views/leaper/waiting_view.gd" id="2_183kc"]
+
+[node name="ViewBase" unique_id=1844738311 node_paths=PackedStringArray("dot_label", "timer", "progress_bar") instance=ExtResource("1_vnqct")]
+script = ExtResource("2_183kc")
+dot_label = NodePath("UILayer/DotLabel")
+timer = NodePath("UILayer/Timer")
+progress_bar = NodePath("UILayer/ProgressBar")
+
+[node name="ColorRect" type="ColorRect" parent="UILayer" index="0" unique_id=1130721329]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="ProgressBar" type="ProgressBar" parent="UILayer" index="1" unique_id=1074222843]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -402.5
+offset_top = 16.650024
+offset_right = 402.5
+offset_bottom = 66.650024
+grow_horizontal = 2
+grow_vertical = 2
+value = 10.65
+
+[node name="Timer" type="Timer" parent="UILayer" index="2" unique_id=859819566]
+autostart = true
+
+[node name="DotLabel" type="Label" parent="UILayer" index="3" unique_id=1773044816]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -95.5
+offset_top = 596.69
+offset_right = 95.5
+offset_bottom = 627.69
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 22
+text = ".............................."
+
+[node name="Label" type="Label" parent="UILayer" index="4" unique_id=1367850141]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -27.51001
+offset_right = 250.0
+offset_bottom = -4.51001
+grow_horizontal = 2
+grow_vertical = 2
+text = "qweqwe"
+horizontal_alignment = 1
