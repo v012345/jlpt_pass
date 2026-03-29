@@ -7,8 +7,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_blur"]
 shader = ExtResource("4_blur")
-shader_parameter/blur_amount = 5.77600027436
-shader_parameter/dim = 0.56400002679
+shader_parameter/blur_amount = 4.00000019
+shader_parameter/dim = 0.6000000285
 
 [node name="ViewBase" unique_id=1427704322 node_paths=PackedStringArray("item_list") instance=ExtResource("1_a1sc1")]
 script = ExtResource("2_ivxbf")

@@ -10,14 +10,14 @@
 [ext_resource type="Texture2D" uid="uid://ba66ijkrienuy" path="res://image/Summoner.png" id="8_ix8gv"]
 [ext_resource type="Texture2D" uid="uid://bgaqptldagour" path="res://image/Poisoner.png" id="9_n0pmu"]
 
-[node name="ViewBase" unique_id=1520781739 node_paths=PackedStringArray("tree", "hero_name", "hero_id", "material_1_btn", "material2", "material3", "costCofig", "hero_class_options", "hero_rarity_options", "hero_icon", "max_level") instance=ExtResource("1_sxr24")]
+[node name="ViewBase" unique_id=1520781739 node_paths=PackedStringArray("tree", "hero_name", "hero_id", "material_1_btn", "material_2_btn", "material_3_btn", "costCofig", "hero_class_options", "hero_rarity_options", "hero_icon", "max_level") instance=ExtResource("1_sxr24")]
 script = ExtResource("2_o4gd3")
 tree = NodePath("UILayer/Tree")
 hero_name = NodePath("UILayer/HeroName")
 hero_id = NodePath("UILayer/HeroId")
-material_1_btn = NodePath("UILayer/Button")
-material2 = NodePath("UILayer/Material2")
-material3 = NodePath("UILayer/Material3")
+material_1_btn = NodePath("UILayer/HBoxContainer/ButtonMaterial3")
+material_2_btn = NodePath("UILayer/HBoxContainer/ButtonMaterial2")
+material_3_btn = NodePath("UILayer/HBoxContainer/ButtonMaterial1")
 costCofig = NodePath("UILayer/CostConfig")
 hero_class_options = NodePath("UILayer/VBoxContainer/HBoxContainer2/HeroClassOptions")
 hero_rarity_options = NodePath("UILayer/VBoxContainer/HBoxContainer/HeroRarityOptions")
@@ -99,28 +99,7 @@ offset_top = 12.0
 offset_right = 1843.0
 offset_bottom = 538.0
 
-[node name="Material1" type="LineEdit" parent="UILayer" index="9" unique_id=1714747187]
-layout_mode = 0
-offset_left = 228.0
-offset_top = 115.0
-offset_right = 296.5
-offset_bottom = 146.0
-
-[node name="Material2" type="LineEdit" parent="UILayer" index="10" unique_id=512824994]
-layout_mode = 0
-offset_left = 341.0
-offset_top = 147.0
-offset_right = 409.5
-offset_bottom = 178.0
-
-[node name="Material3" type="LineEdit" parent="UILayer" index="11" unique_id=1960327078]
-layout_mode = 0
-offset_left = 465.0
-offset_top = 146.0
-offset_right = 533.5
-offset_bottom = 177.0
-
-[node name="Tree" type="Tree" parent="UILayer" index="12" unique_id=1287461729]
+[node name="Tree" type="Tree" parent="UILayer" index="9" unique_id=1287461729]
 layout_mode = 0
 offset_left = 225.0
 offset_top = 220.0
@@ -128,7 +107,7 @@ offset_right = 539.0343
 offset_bottom = 658.5467
 hide_root = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UILayer" index="13" unique_id=1412501865]
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer" index="10" unique_id=1412501865]
 layout_mode = 0
 offset_left = 186.0
 offset_top = 694.0
@@ -238,20 +217,36 @@ size_flags_horizontal = 3
 text = "应用"
 metadata/_edit_lock_ = true
 
-[node name="HeroIcon" type="TextureRect" parent="UILayer" index="14" unique_id=345426699]
+[node name="HeroIcon" type="TextureRect" parent="UILayer" index="11" unique_id=345426699]
 layout_mode = 0
 offset_left = 318.0
 offset_top = 28.0
 offset_right = 358.0
 offset_bottom = 68.0
 
-[node name="Button" type="Button" parent="UILayer" index="15" unique_id=1500881466]
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer" index="12" unique_id=1173763214]
 layout_mode = 0
-offset_left = 229.0
-offset_top = 157.0
-offset_right = 288.0
-offset_bottom = 176.0
+offset_left = 230.0
+offset_top = 154.0
+offset_right = 547.0
+offset_bottom = 194.0
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="ButtonMaterial1" type="Button" parent="UILayer/HBoxContainer" index="0" unique_id=60388726]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ButtonMaterial2" type="Button" parent="UILayer/HBoxContainer" index="1" unique_id=322507449]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ButtonMaterial3" type="Button" parent="UILayer/HBoxContainer" index="2" unique_id=1500881466]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [connection signal="pressed" from="UILayer/ButtonApplyAll" to="." method="_on_button_apply_all_pressed"]
 [connection signal="pressed" from="UILayer/ButtonParse" to="." method="_on_button_parse_pressed"]
-[connection signal="pressed" from="UILayer/Button" to="." method="_on_material_btn_pressed" binds= [1]]
+[connection signal="pressed" from="UILayer/HBoxContainer/ButtonMaterial1" to="." method="_on_material_btn_pressed" flags=18 binds= [1]]
+[connection signal="pressed" from="UILayer/HBoxContainer/ButtonMaterial2" to="." method="_on_material_btn_pressed" flags=18 binds= [2]]
+[connection signal="pressed" from="UILayer/HBoxContainer/ButtonMaterial3" to="." method="_on_material_btn_pressed" flags=18 binds= [3]]
