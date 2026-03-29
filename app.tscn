@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://drdjy3mrwq1dk" path="res://components/ui/hero_list_item.tscn" id="22_i77su"]
 [ext_resource type="PackedScene" uid="uid://xxnadnirp75j" path="res://templates/entities.tscn" id="22_kd73m"]
 [ext_resource type="PackedScene" uid="uid://cbxfdaa1xna6y" path="res://entities/player.tscn" id="23_j4pmb"]
+[ext_resource type="PackedScene" uid="uid://qorer3lfk426" path="res://views/leaper/leaper_hero_select_view.tscn" id="23_m77ee"]
 [ext_resource type="PackedScene" uid="uid://ceb31n8rvt3k6" path="res://components/ui/leaper_item.tscn" id="26_ixia8"]
 [ext_resource type="PackedScene" uid="uid://bf7h0f5cv231d" path="res://models/leaper_heros_model.tscn" id="27_2ysod"]
 [ext_resource type="PackedScene" uid="uid://dwb843o2ip2ua" path="res://models/leaper/leaper_config_model.tscn" id="29_aarq4"]
@@ -65,6 +66,7 @@ hero_info = ExtResource("18_7bxad")
 waiting_view = ExtResource("20_fr0lj")
 leaper_item_select_view = ExtResource("21_rfw64")
 leaper_import_view = ExtResource("22_e13ls")
+leaper_hero_select_view = ExtResource("23_m77ee")
 
 [node name="Components" parent="." unique_id=2064658630 instance=ExtResource("4_d7sxu")]
 match_hand = ExtResource("6_acaik")

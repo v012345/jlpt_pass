@@ -226,10 +226,10 @@ offset_bottom = 68.0
 
 [node name="ImportLvConfigBtn" type="Button" parent="UILayer" index="12" unique_id=516991113]
 layout_mode = 0
-offset_left = 572.0
-offset_top = 546.0
-offset_right = 746.0
-offset_bottom = 591.0
+offset_left = 566.0
+offset_top = 507.0
+offset_right = 740.0
+offset_bottom = 552.0
 text = "表格导入"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UILayer" index="13" unique_id=1173763214]
@@ -253,9 +253,18 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="LvUpMaterialApplyBtn" type="Button" parent="UILayer" index="14" unique_id=1990093867]
+layout_mode = 0
+offset_left = 565.0
+offset_top = 579.0
+offset_right = 735.0
+offset_bottom = 634.0
+text = "应用"
+
 [connection signal="pressed" from="UILayer/ButtonApplyAll" to="." method="_on_button_apply_all_pressed"]
 [connection signal="pressed" from="UILayer/ButtonParse" to="." method="_on_button_parse_pressed"]
 [connection signal="pressed" from="UILayer/ImportLvConfigBtn" to="." method="_on_import_lv_config_btn_pressed"]
 [connection signal="pressed" from="UILayer/HBoxContainer/ButtonMaterial1" to="." method="_on_material_btn_pressed" flags=18 binds= [1]]
 [connection signal="pressed" from="UILayer/HBoxContainer/ButtonMaterial2" to="." method="_on_material_btn_pressed" flags=18 binds= [2]]
 [connection signal="pressed" from="UILayer/HBoxContainer/ButtonMaterial3" to="." method="_on_material_btn_pressed" flags=18 binds= [3]]
+[connection signal="pressed" from="UILayer/LvUpMaterialApplyBtn" to="." method="_on_lv_up_material_apply_btn_pressed"]
