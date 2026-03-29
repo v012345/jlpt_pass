@@ -7,6 +7,10 @@ extends ViewBase
 @export var material2: LineEdit
 @export var material3: LineEdit
 @export var costCofig: TextEdit
+@export var hero_class_options: OptionButton
+@export var hero_rarity_options: OptionButton
+@export var hero_icon: TextureRect
+@export var max_level: LineEdit
 
 var current_hero_id := ""
 
@@ -21,14 +25,21 @@ func _ready() -> void:
 	tree.set_column_title(1, " 材料1 ")
 	tree.set_column_title(2, " 材料2 ")
 	tree.set_column_title(3, " 材料3 ")
+	hero_class_options.get_popup().add_theme_constant_override("icon_max_width", 26)
 	pass # Replace with function body.
 
 func init(id: String):
-	return
-	current_hero_id = id
-	var hero_data = GlobalDb.leaper_tables["HeroList"][id]
-	hero_name.text = "名字 : %s" % hero_data["Name"]
+	var hero_data = Model.LeaperHerosModel.getHeroDataById(id)
 	hero_id.text = "ID: %s" % id
+	hero_name.text = "名字 : %s" % hero_data.Name
+	hero_class_options.selected = hero_data.Type - 1
+	hero_rarity_options.selected = hero_data.Rarity - 1
+	var image = Image.new()
+	image.load(Model.LeaperHerosModel.getHeroIconById(id))
+	hero_icon.texture = ImageTexture.create_from_image(image)
+	max_level.text = str(hero_data.MaxLevel)
+	current_hero_id = id
+	return
 	var m = hero_data["UpLvMaterials"]
 	material1.text = str(m[0]) if m.size() > 0 else "0"
 	material2.text = str(m[1]) if m.size() > 1 else "0"

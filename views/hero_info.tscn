@@ -2,8 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://bvkktqfd43gsp" path="res://views/base/view_base.tscn" id="1_sxr24"]
 [ext_resource type="Script" uid="uid://d0v85mshpwvk4" path="res://scripts/views/hero_info.gd" id="2_o4gd3"]
+[ext_resource type="Texture2D" uid="uid://j6q0ufrvv4ha" path="res://image/Mage.png" id="3_cov7h"]
+[ext_resource type="Texture2D" uid="uid://ta3fria5pevp" path="res://image/Archer.png" id="4_v6gdb"]
+[ext_resource type="Texture2D" uid="uid://dviyhkehj8ju0" path="res://image/Warrior.png" id="5_sjmpe"]
+[ext_resource type="Texture2D" uid="uid://mn0rvmjpcjip" path="res://image/Support.png" id="6_6s1iu"]
+[ext_resource type="Texture2D" uid="uid://b2kemxeph80o4" path="res://image/Controller.png" id="7_lgcdk"]
+[ext_resource type="Texture2D" uid="uid://ba66ijkrienuy" path="res://image/Summoner.png" id="8_ix8gv"]
+[ext_resource type="Texture2D" uid="uid://bgaqptldagour" path="res://image/Poisoner.png" id="9_n0pmu"]
 
-[node name="ViewBase" unique_id=1520781739 node_paths=PackedStringArray("tree", "hero_name", "hero_id", "material1", "material2", "material3", "costCofig") instance=ExtResource("1_sxr24")]
+[node name="ViewBase" unique_id=1520781739 node_paths=PackedStringArray("tree", "hero_name", "hero_id", "material1", "material2", "material3", "costCofig", "hero_class_options", "hero_rarity_options", "hero_icon", "max_level") instance=ExtResource("1_sxr24")]
 script = ExtResource("2_o4gd3")
 tree = NodePath("UILayer/Tree")
 hero_name = NodePath("UILayer/HeroName")
@@ -12,6 +19,10 @@ material1 = NodePath("UILayer/Material1")
 material2 = NodePath("UILayer/Material2")
 material3 = NodePath("UILayer/Material3")
 costCofig = NodePath("UILayer/CostConfig")
+hero_class_options = NodePath("UILayer/VBoxContainer/HBoxContainer2/HeroClassOptions")
+hero_rarity_options = NodePath("UILayer/VBoxContainer/HBoxContainer/HeroRarityOptions")
+hero_icon = NodePath("UILayer/HeroIcon")
+max_level = NodePath("UILayer/VBoxContainer/HBoxContainer3/MaxLevel")
 
 [node name="ColorRect" type="ColorRect" parent="UILayer" index="0" unique_id=2063966389]
 layout_mode = 1
@@ -24,18 +35,18 @@ color = Color(0.3854925, 0.38549247, 0.38549247, 1)
 
 [node name="HeroId" type="Label" parent="UILayer" index="1" unique_id=1030479684]
 layout_mode = 0
-offset_left = 139.0
-offset_top = 83.0
-offset_right = 203.0
-offset_bottom = 106.0
+offset_left = 117.0
+offset_top = 64.0
+offset_right = 181.0
+offset_bottom = 87.0
 text = "需要材料"
 
 [node name="HeroName" type="Label" parent="UILayer" index="2" unique_id=874353184]
 layout_mode = 0
-offset_left = 279.0
-offset_top = 86.0
-offset_right = 343.0
-offset_bottom = 109.0
+offset_left = 119.0
+offset_top = 101.0
+offset_right = 183.0
+offset_bottom = 124.0
 text = "需要材料"
 
 [node name="Label2" type="Label" parent="UILayer" index="3" unique_id=381383309]
@@ -116,6 +127,123 @@ offset_top = 220.0
 offset_right = 539.0343
 offset_bottom = 658.5467
 columns = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer" index="13" unique_id=1412501865]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 694.0
+offset_right = 484.0
+offset_bottom = 955.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UILayer/VBoxContainer" index="0" unique_id=1152166135]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="UILayer/VBoxContainer/HBoxContainer2" index="0" unique_id=345898733]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "职业"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="HeroClassOptions" type="OptionButton" parent="UILayer/VBoxContainer/HBoxContainer2" index="1" unique_id=1325999104]
+layout_mode = 2
+size_flags_horizontal = 3
+expand_icon = true
+selected = 0
+item_count = 7
+popup/item_0/text = "法师"
+popup/item_0/icon = ExtResource("3_cov7h")
+popup/item_0/id = 1
+popup/item_1/text = "射手"
+popup/item_1/icon = ExtResource("4_v6gdb")
+popup/item_1/id = 2
+popup/item_2/text = "战士"
+popup/item_2/icon = ExtResource("5_sjmpe")
+popup/item_2/id = 3
+popup/item_3/text = "辅助"
+popup/item_3/icon = ExtResource("6_6s1iu")
+popup/item_3/id = 4
+popup/item_4/text = "控制"
+popup/item_4/icon = ExtResource("7_lgcdk")
+popup/item_4/id = 5
+popup/item_5/text = "召唤"
+popup/item_5/icon = ExtResource("8_ix8gv")
+popup/item_5/id = 6
+popup/item_6/text = "毒系"
+popup/item_6/icon = ExtResource("9_n0pmu")
+popup/item_6/id = 7
+
+[node name="Button" type="Button" parent="UILayer/VBoxContainer/HBoxContainer2" index="2" unique_id=1863876226]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "应用"
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/VBoxContainer" index="1" unique_id=296497252]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="UILayer/VBoxContainer/HBoxContainer" index="0" unique_id=1148469669]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "资质"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="HeroRarityOptions" type="OptionButton" parent="UILayer/VBoxContainer/HBoxContainer" index="1" unique_id=1364486734]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+expand_icon = true
+selected = 0
+item_count = 5
+popup/item_0/text = "常见"
+popup/item_0/id = 1
+popup/item_1/text = "史诗"
+popup/item_1/id = 2
+popup/item_2/text = "传说"
+popup/item_2/id = 3
+popup/item_3/text = "绝世"
+popup/item_3/id = 4
+popup/item_4/text = "至尊"
+popup/item_4/id = 5
+
+[node name="Button" type="Button" parent="UILayer/VBoxContainer/HBoxContainer" index="2" unique_id=237338793]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "应用"
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UILayer/VBoxContainer" index="2" unique_id=594175644]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="UILayer/VBoxContainer/HBoxContainer3" index="0" unique_id=1161348638]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "最大等级"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="MaxLevel" type="LineEdit" parent="UILayer/VBoxContainer/HBoxContainer3" index="1" unique_id=1330849099]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="UILayer/VBoxContainer/HBoxContainer3" index="2" unique_id=103632642]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "应用"
+metadata/_edit_lock_ = true
+
+[node name="HeroIcon" type="TextureRect" parent="UILayer" index="14" unique_id=345426699]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 28.0
+offset_right = 358.0
+offset_bottom = 68.0
 
 [connection signal="pressed" from="UILayer/ButtonApplyAll" to="." method="_on_button_apply_all_pressed"]
 [connection signal="pressed" from="UILayer/ButtonParse" to="." method="_on_button_parse_pressed"]
