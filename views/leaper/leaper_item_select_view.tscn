@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://buk346xthdaan"]
+
+[ext_resource type="PackedScene" uid="uid://bvkktqfd43gsp" path="res://views/base/view_base.tscn" id="1_a1sc1"]
+[ext_resource type="Script" uid="uid://df3pgi7wv8e63" path="res://scripts/views/leaper/leaper_item_select_view.gd" id="2_ivxbf"]
+[ext_resource type="PackedScene" uid="uid://cekm0jgfdbbyj" path="res://components/ui/base/scroll_list_base.tscn" id="3_3ckvp"]
+
+[node name="ViewBase" unique_id=1427704322 node_paths=PackedStringArray("item_list") instance=ExtResource("1_a1sc1")]
+script = ExtResource("2_ivxbf")
+item_list = NodePath("UILayer/ScrollListBase")
+
+[node name="ColorRect" type="ColorRect" parent="UILayer" index="0" unique_id=705676102]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5, 0.5, 0.5, 0.5019608)
+
+[node name="ScrollListBase" parent="UILayer" index="1" unique_id=1917470225 instance=ExtResource("3_3ckvp")]
+layout_mode = 1
+offset_left = 286.0
+offset_top = 275.0
+offset_right = -345.0
+offset_bottom = -304.0
+
+[node name="ButtonConfirm" type="Button" parent="UILayer" index="2" unique_id=374541288]
+layout_mode = 0
+offset_left = 607.0
+offset_top = 813.0
+offset_right = 791.0
+offset_bottom = 866.0
+text = "确定"
+
+[node name="ButtonCancel" type="Button" parent="UILayer" index="3" unique_id=1342836358]
+layout_mode = 0
+offset_left = 1146.0
+offset_top = 818.0
+offset_right = 1330.0
+offset_bottom = 871.0
+text = "取消"
+
+[connection signal="pressed" from="UILayer/ButtonConfirm" to="." method="_on_button_confirm_pressed"]
+[connection signal="pressed" from="UILayer/ButtonCancel" to="." method="_on_button_cancel_pressed"]

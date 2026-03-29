@@ -20,3 +20,5 @@ func getLeaperTables():
 
 func initLeaperModels():
 	Model.LeaperHerosModel.init()
+	Model.LeaperTextModel.init()
+	Model.LeaperItemModel.init()	

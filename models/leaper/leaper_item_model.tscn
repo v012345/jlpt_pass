@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cg0bnndhyib0l"]
+
+[ext_resource type="PackedScene" uid="uid://c6vi876pcuywa" path="res://models/base/data_model_base.tscn" id="1_mnbjm"]
+[ext_resource type="Script" uid="uid://b7r5172cngqit" path="res://scripts/models/leaper/leaper_item_model.gd" id="2_olouh"]
+
+[node name="DataModelBase" unique_id=611160300 instance=ExtResource("1_mnbjm")]
+script = ExtResource("2_olouh")

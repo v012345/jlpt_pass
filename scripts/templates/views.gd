@@ -14,3 +14,4 @@ class_name AllViews
 @export var leaper_tool_config:PackedScene
 @export var hero_info:PackedScene
 @export var waiting_view:PackedScene
+@export var leaper_item_select_view:PackedScene

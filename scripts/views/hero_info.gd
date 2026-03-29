@@ -3,7 +3,7 @@ extends ViewBase
 @export var tree: Tree
 @export var hero_name: Label
 @export var hero_id: Label
-@export var material1: LineEdit
+@export var material_1_btn: Button
 @export var material2: LineEdit
 @export var material3: LineEdit
 @export var costCofig: TextEdit
@@ -38,7 +38,7 @@ func init(id: String):
 	max_level.text = str(hero_data.MaxLevel)
 	current_hero_id = id
 	var m = hero_data.UpLvMaterials
-	material1.text = str(m[0]) if m.size() > 0 else "0"
+	material_1_btn.text = str(m[0]) if m.size() > 0 else "0"
 	material2.text = str(m[1]) if m.size() > 1 else "0"
 	material3.text = str(m[2]) if m.size() > 2 else "0"
 	var upLvCost = hero_data.UpLvCost
@@ -63,7 +63,6 @@ func init(id: String):
 			item.set_text(1, "0")
 			item.set_text(2, "0")
 			item.set_text(3, "0")
-
 
 
 func _on_button_parse_pressed() -> void:
@@ -121,3 +120,12 @@ func _on_button_apply_all_pressed() -> void:
 		hero_list[hero_key]["UpLvCost"] = up_lv_cost.duplicate(true)
 
 	GlobalDb.save_leaper_table("HeroList", hero_list)
+
+
+func _on_material_btn_pressed(extra_arg_0: int) -> void:
+	print("material btn pressed", extra_arg_0)
+	var view: LeaperItemSelectView = SceneManager.open_view(Const.Views.leaper_item_select_view, false)
+	view.set_select_item_callback(func(args):
+		print("selected item id:", args)
+		pass )
+	pass # Replace with function body.

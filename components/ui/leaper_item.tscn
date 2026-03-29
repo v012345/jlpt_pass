@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ceb31n8rvt3k6"]
+
+[ext_resource type="PackedScene" uid="uid://b1n1grxcxa3kg" path="res://components/ui/base/scroll_list_item_base.tscn" id="1_h3fxq"]
+[ext_resource type="Script" uid="uid://bda1pjtjumqnj" path="res://scripts/components/ui/leaper_item_list_item.gd" id="2_4ho3o"]
+
+[node name="ScrollListItemBase" unique_id=1784697036 node_paths=PackedStringArray("icon") instance=ExtResource("1_h3fxq")]
+script = ExtResource("2_4ho3o")
+icon = NodePath("UILayer/TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="UILayer" index="0" unique_id=1693958719]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
