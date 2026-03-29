@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ta3fria5pevp"
-path="res://.godot/imported/Archer.png-e12b42d9b05bb6a1425beac289d62b9c.ctex"
+uid="uid://c3clt32ewj5g2"
+path="res://.godot/imported/checker.png-8b1e78629afed6d5e5a9768266a686b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/Archer.png"
-dest_files=["res://.godot/imported/Archer.png-e12b42d9b05bb6a1425beac289d62b9c.ctex"]
+source_file="res://image/checker.png"
+dest_files=["res://.godot/imported/checker.png-8b1e78629afed6d5e5a9768266a686b9.ctex"]
 
 [params]
 

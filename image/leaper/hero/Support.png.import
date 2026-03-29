@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgaqptldagour"
-path="res://.godot/imported/Poisoner.png-51b8c4dfc0fb5a5d06be7fa6911e8a1c.ctex"
+uid="uid://mn0rvmjpcjip"
+path="res://.godot/imported/Support.png-906084969a626475f64480cc3f3e2ab9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/Poisoner.png"
-dest_files=["res://.godot/imported/Poisoner.png-51b8c4dfc0fb5a5d06be7fa6911e8a1c.ctex"]
+source_file="res://image/leaper/hero/Support.png"
+dest_files=["res://.godot/imported/Support.png-906084969a626475f64480cc3f3e2ab9.ctex"]
 
 [params]
 

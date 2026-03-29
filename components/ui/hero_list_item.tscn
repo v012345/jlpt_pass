@@ -2,14 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://b1n1grxcxa3kg" path="res://components/ui/base/scroll_list_item_base.tscn" id="1_lcahh"]
 [ext_resource type="Script" uid="uid://c82mu004jlupq" path="res://scripts/components/ui/hero_list_item.gd" id="2_7hw02"]
+[ext_resource type="Texture2D" uid="uid://c3clt32ewj5g2" path="res://image/checker.png" id="3_bnkgg"]
 
-[node name="ScrollListItemBase" unique_id=1851686460 node_paths=PackedStringArray("hero_name", "hero_icon") instance=ExtResource("1_lcahh")]
+[node name="HeroListItem" unique_id=1851686460 node_paths=PackedStringArray("hero_name", "hero_icon", "is_selected") instance=ExtResource("1_lcahh")]
 custom_minimum_size = Vector2(100, 100)
 offset_right = 100.0
 offset_bottom = 100.0
 script = ExtResource("2_7hw02")
 hero_name = NodePath("UILayer/Label")
 hero_icon = NodePath("UILayer/TextureRect")
+is_selected = NodePath("UILayer/Checker")
 
 [node name="TextureRect" type="TextureRect" parent="UILayer" index="0" unique_id=1063099264]
 layout_mode = 1
@@ -39,6 +41,16 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 20
 text = "Name"
+
+[node name="Checker" type="TextureRect" parent="UILayer" index="2" unique_id=1375810082]
+visible = false
+layout_mode = 0
+offset_left = 20.0
+offset_top = 17.0
+offset_right = 80.0
+offset_bottom = 77.0
+texture = ExtResource("3_bnkgg")
+expand_mode = 1
 
 [node name="ButtonBeClicked" parent="." index="1"]
 anchors_preset = -1

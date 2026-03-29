@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dviyhkehj8ju0"
-path="res://.godot/imported/Warrior.png-2197eae18226ae3d7b193bfd780f0b18.ctex"
+uid="uid://bgaqptldagour"
+path="res://.godot/imported/Poisoner.png-f668b51a318b48f76af4acb38f86d653.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/Warrior.png"
-dest_files=["res://.godot/imported/Warrior.png-2197eae18226ae3d7b193bfd780f0b18.ctex"]
+source_file="res://image/leaper/hero/Poisoner.png"
+dest_files=["res://.godot/imported/Poisoner.png-f668b51a318b48f76af4acb38f86d653.ctex"]
 
 [params]
 

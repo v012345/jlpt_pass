@@ -2,19 +2,28 @@
 
 [ext_resource type="PackedScene" uid="uid://bvkktqfd43gsp" path="res://views/base/view_base.tscn" id="1_w1ybf"]
 [ext_resource type="Script" uid="uid://eeiykrwfwxkr" path="res://scripts/views/leaper/leaper_hero_select_view.gd" id="2_e3e85"]
+[ext_resource type="Shader" uid="uid://ijk5tigos3ft" path="res://shaders/gaussian_blur.gdshader" id="3_2mhgi"]
 [ext_resource type="PackedScene" uid="uid://cekm0jgfdbbyj" path="res://components/ui/base/scroll_list_base.tscn" id="3_lac2j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fdirh"]
+shader = ExtResource("3_2mhgi")
+shader_parameter/blur_amount = 2.0
+shader_parameter/lod = 1.5
+shader_parameter/dim = 0.3
 
 [node name="LeaperHeroSelectView" unique_id=190645414 node_paths=PackedStringArray("hero_list") instance=ExtResource("1_w1ybf")]
 script = ExtResource("2_e3e85")
 hero_list = NodePath("UILayer/ScrollListBase")
 
 [node name="ColorRect" type="ColorRect" parent="UILayer" index="0" unique_id=1417628773]
+material = SubResource("ShaderMaterial_fdirh")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.5, 0.5, 0.5, 0.49411765)
 
 [node name="ScrollListBase" parent="UILayer" index="1" unique_id=1669976551 instance=ExtResource("3_lac2j")]
 layout_mode = 1
@@ -37,5 +46,6 @@ offset_left = 467.0
 offset_top = 808.0
 offset_right = 874.0
 offset_bottom = 948.0
+text = "确认"
 
 [connection signal="pressed" from="UILayer/ButtonCancel" to="." method="_on_button_cancel_pressed"]

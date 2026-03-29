@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2kemxeph80o4"
-path="res://.godot/imported/Controller.png-97145b1f4397c84c089ee14cde5b602b.ctex"
+path="res://.godot/imported/Controller.png-88a28032ae1e760a7c4f21eb21f8f93a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/Controller.png"
-dest_files=["res://.godot/imported/Controller.png-97145b1f4397c84c089ee14cde5b602b.ctex"]
+source_file="res://image/leaper/hero/Controller.png"
+dest_files=["res://.godot/imported/Controller.png-88a28032ae1e760a7c4f21eb21f8f93a.ctex"]
 
 [params]
 

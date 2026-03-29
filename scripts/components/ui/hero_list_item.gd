@@ -3,6 +3,7 @@ class_name HeroListItem
 var id: String
 @export var hero_name: Label
 @export var hero_icon: TextureRect
+@export var is_selected: TextureRect
 var image: Image
 
 # Called when the node enters the scene tree for the first time.
@@ -17,3 +18,8 @@ func init(_id: String):
 		hero_icon.texture = ImageTexture.create_from_image(image)
 	#GlobalDb.leaper_tables["HeroList"][id]["Name"]
 	# print(GlobalDb.leaper_tables["HeroList"][id]["Name"])
+
+func setSelect(b:bool):
+	is_selected.visible = b
+func isSelect()-> bool: 
+	return is_selected.visible

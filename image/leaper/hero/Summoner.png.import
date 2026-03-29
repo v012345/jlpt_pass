@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j6q0ufrvv4ha"
-path="res://.godot/imported/Mage.png-c28f1cb8e4f651761b20da0390610ef0.ctex"
+uid="uid://ba66ijkrienuy"
+path="res://.godot/imported/Summoner.png-c85942497496eaf32dd268bd33519260.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/Mage.png"
-dest_files=["res://.godot/imported/Mage.png-c28f1cb8e4f651761b20da0390610ef0.ctex"]
+source_file="res://image/leaper/hero/Summoner.png"
+dest_files=["res://.godot/imported/Summoner.png-c85942497496eaf32dd268bd33519260.ctex"]
 
 [params]
 

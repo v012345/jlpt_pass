@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://bvkktqfd43gsp" path="res://views/base/view_base.tscn" id="1_sxr24"]
 [ext_resource type="Script" uid="uid://d0v85mshpwvk4" path="res://scripts/views/hero_info.gd" id="2_o4gd3"]
-[ext_resource type="Texture2D" uid="uid://j6q0ufrvv4ha" path="res://image/Mage.png" id="3_cov7h"]
-[ext_resource type="Texture2D" uid="uid://ta3fria5pevp" path="res://image/Archer.png" id="4_v6gdb"]
-[ext_resource type="Texture2D" uid="uid://dviyhkehj8ju0" path="res://image/Warrior.png" id="5_sjmpe"]
-[ext_resource type="Texture2D" uid="uid://mn0rvmjpcjip" path="res://image/Support.png" id="6_6s1iu"]
-[ext_resource type="Texture2D" uid="uid://b2kemxeph80o4" path="res://image/Controller.png" id="7_lgcdk"]
-[ext_resource type="Texture2D" uid="uid://ba66ijkrienuy" path="res://image/Summoner.png" id="8_ix8gv"]
-[ext_resource type="Texture2D" uid="uid://bgaqptldagour" path="res://image/Poisoner.png" id="9_n0pmu"]
+[ext_resource type="Texture2D" uid="uid://j6q0ufrvv4ha" path="res://image/leaper/hero/Mage.png" id="3_cov7h"]
+[ext_resource type="Texture2D" uid="uid://ta3fria5pevp" path="res://image/leaper/hero/Archer.png" id="4_v6gdb"]
+[ext_resource type="Texture2D" uid="uid://dviyhkehj8ju0" path="res://image/leaper/hero/Warrior.png" id="5_sjmpe"]
+[ext_resource type="Texture2D" uid="uid://mn0rvmjpcjip" path="res://image/leaper/hero/Support.png" id="6_6s1iu"]
+[ext_resource type="Texture2D" uid="uid://b2kemxeph80o4" path="res://image/leaper/hero/Controller.png" id="7_lgcdk"]
+[ext_resource type="Texture2D" uid="uid://ba66ijkrienuy" path="res://image/leaper/hero/Summoner.png" id="8_ix8gv"]
+[ext_resource type="Texture2D" uid="uid://bgaqptldagour" path="res://image/leaper/hero/Poisoner.png" id="9_n0pmu"]
 
 [node name="ViewBase" unique_id=1520781739 node_paths=PackedStringArray("tree", "hero_name", "hero_id", "material_1_btn", "material_2_btn", "material_3_btn", "costCofig", "hero_class_options", "hero_rarity_options", "hero_icon", "max_level") instance=ExtResource("1_sxr24")]
 script = ExtResource("2_o4gd3")
