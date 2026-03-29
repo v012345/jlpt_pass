@@ -17,8 +17,6 @@ var current_hero_id := ""
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.tree.columns = 4
-
-	
 	tree.set_column_titles_visible(true)
 	tree.set_hide_root(true)
 	tree.set_column_title(0, "Level")
@@ -39,21 +37,23 @@ func init(id: String):
 	hero_icon.texture = ImageTexture.create_from_image(image)
 	max_level.text = str(hero_data.MaxLevel)
 	current_hero_id = id
-	return
-	var m = hero_data["UpLvMaterials"]
+	var m = hero_data.UpLvMaterials
 	material1.text = str(m[0]) if m.size() > 0 else "0"
 	material2.text = str(m[1]) if m.size() > 1 else "0"
 	material3.text = str(m[2]) if m.size() > 2 else "0"
-	var upLvCost = hero_data["UpLvCost"]
+	var upLvCost = hero_data.UpLvCost
 	
 	tree.clear()
 	var root = self.tree.create_item()
-	for i in range(1, hero_data["MaxLevel"] + 1):
+	for i in range(1, hero_data.MaxLevel + 1):
 		var item = tree.create_item(root)
 		item.set_text(0, "Lv.%d" % i)
 		item.set_editable(1, true)
 		item.set_editable(2, true)
 		item.set_editable(3, true)
+		item.set_text_alignment(1, HORIZONTAL_ALIGNMENT_CENTER)
+		item.set_text_alignment(2, HORIZONTAL_ALIGNMENT_CENTER)
+		item.set_text_alignment(3, HORIZONTAL_ALIGNMENT_CENTER)
 		if upLvCost.size() >= i:
 			item.set_text(1, str(int(upLvCost[i - 1][0])))
 			item.set_text(2, str(int(upLvCost[i - 1][1])))
@@ -64,7 +64,6 @@ func init(id: String):
 			item.set_text(2, "0")
 			item.set_text(3, "0")
 
-	pass
 
 
 func _on_button_parse_pressed() -> void:
